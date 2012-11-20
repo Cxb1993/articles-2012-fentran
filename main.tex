@@ -1,0 +1,73 @@
+\typeout{ ====================================================================}
+\typeout{ this is file main.tex, created at 20 Nov 2012                       }
+\typeout{ maintained by Gustavo Rabello dos Anjos                             }
+\typeout{ e-mail: gustavo.rabello@gmail.com                                   }
+\typeout{ ====================================================================}
+
+\documentclass[a4paper,fleqn,12pt,twoside]{report} % tipo de folha e documento
+\usepackage[T1]{fontenc}              % acentuacao e hifenizacao portuguesa
+%\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}            % pacote de linguagens 
+\usepackage{indentfirst}              % tab na primeira linha do paragrafo 
+\usepackage[hmargin=30mm,vmargin=25mm]{geometry}
+\usepackage[pdftex]{graphicx}         % pacote para inclusao de figuras,
+\usepackage{subfigure,wrapfig}        % pacote para figuras duplas (subfigure)
+\usepackage{amssymb,amsmath,amsfonts} % pacote matematicos
+\usepackage{multirow}                 % multiplas linhas por coluna
+\usepackage{pictexwd,color}			  % ambiente para PICTEX
+\usepackage{tocbibind}				  % para inclusao de bib e ind na TOC
+\usepackage{alltt,verbatim,moreverb}  % para entrada verbatim comandos LaTeX
+\usepackage{rotating}				  % para rotacionar alguns flutuantes
+\usepackage{amscd}					  % para setas longas
+
+\graphicspath{{./figuras/}{./figs/}}  % onde encontrar as figuras...
+
+\renewcommand{\baselinestretch}{1.5}  % espacamento entre linhas 
+\setlength{\mathindent}{15mm}         % espacamento das equacoes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MACROS MATEMATICOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tr}{{\,\rm tr}\,}
+\newcommand{\sen}{{\,\rm sen}\,}
+\newcommand{\senh}{{\,\rm senh}\,}
+\newcommand{\diverg}{{\,\rm div}\,}
+\newcommand{\grad}{\,\mathbf{grad}\,}
+\newcommand{\rot}{\,\mathbf{rot}\,}
+\newcommand{\uvet}{\mathbf{u}}
+\newcommand{\vvet}{\mathbf{v}}
+\newcommand{\wvet}{\mathbf{w}}
+\newcommand{\nvet}{\mathbf{n}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\gvet}{\mathbf{g}}
+\newcommand{\eng}[1]{\foreignlanguage{english}{\textit{#1\/}}}
+\newcommand{\fr}[1]{\foreignlanguage{french}{\textit{#1\/}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MACROS MATEMATICOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MACROS PORTUGUES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ih}{\'\i}
+\newcommand{\ao}{\~ao }
+\newcommand{\oes}{\~oes }
+\newcommand{\cao}{\c c\~ao }
+\newcommand{\coes}{\c c\~oes }
+\newcommand{\aon}{\~ao}
+\newcommand{\oesn}{\~oes}
+\newcommand{\caon}{\c c\~ao}
+\newcommand{\coesn}{\c c\~oes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MACROS PORTUGUES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+ 
+\chapter{Introdu\c c\~ao aos Escoamentos Bif\'asicos}
+
+\subsection{Introdu\c c\~ao}
+\subsection{Escoamentos horizontais}
+\subsection{Escoamentos verticais}
+\subsection{Exerc\'icios}
+
+
+
+\bibliographystyle{elsarticle-num-names}
+\bibliography{$HOME/projects/misc/latex/referencias}
+
+\end{document}
+
+\typeout{ *************** End of file main.tex *************** }
