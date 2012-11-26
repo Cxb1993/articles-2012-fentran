@@ -1,0 +1,17 @@
+.DS*
+references
+*swp
+*.aux
+*.bbl
+*.blg
+*.toc
+*.out
+*.nlo
+*.lof
+*.lot
+*.log
+*.spl
+*.idx
+*.ilg
+*.nls
+main.pdf
