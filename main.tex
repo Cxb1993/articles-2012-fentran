@@ -65,14 +65,22 @@
  
 \chapter{Introdu\c c\~ao aos Escoamentos Bif\'asicos}
 
-A proposta deste cap\'itulo \'e de dar ao leitor uma vis\~ao geral dos
+A proposta deste cap\'itulo \'e dar ao leitor uma vis\~ao geral dos
 m\'etodos mais importantes encontrados na literatura de escoamentos
 bif\'asicos. Uma revis\~ao  bibliogr\'afica \'e tamb\'em inclu\'ida para
 ajudar o aluno a encontrar as principais refer\^encias e nomes de
-autores que desenvolvem metodologias para a investiga\cao deste
+autores que desenvolveram metodologias para a investiga\cao deste
 importante fen\^omeno.
 
 \subsection{Introdu\c c\~ao}
+
+O conceito de fase, atrav\'es dos princ\'ipios de termodin\^amica
+cl\'assica, \'e descrito como o estado macrosc\'opico da mat\'eria no
+qual sua estrutura f\'isica e em sua composi\cao qu\'imica s\~ao
+homog\^eneas. Na presen\c ca de duas ou mais fases, origina-se o que
+chamamos de escoamentos multif\'asicos, onde o termo bif\'asico se
+refere \`a presen\c ca de apenas 2 fases (Ex. bolha de ar em um copo de
+\'agua). 
 
 
 \subsection{Equa\c c\~oes de Governo}
@@ -84,8 +92,8 @@ equa\cao de conserva\cao de quantidade de movimento (referencia para
 capitulo do Pontes). Uma vez que a dedu\cao das equa\c c\~oes de
 conserva\cao para escoamentos monof\'asicos se encontra no volume 1
 deste livro, tomamos a liberdade de apresentar estas equa\c c\~oes,
-aplicadas ao escoamento bif\'asico, em sua forma euleriana vetorial
-final, para o modelo de um fluido (one-fluid).
+aplicadas a escoamentos bif\'asicos, em sua forma euleriana vetorial, 
+para o modelo de um fluido (one-fluid).
 
 \begin{equation}
 	\rho \bigg[ \ 
@@ -99,7 +107,6 @@ final, para o modelo de um fluido (one-fluid).
 	0
 \label{eq:cm9}
 \end{equation}
-
 
 Desde que $\rho \ne 0$ em todas as fases, a equa\cao de conserva\cao de
 massa \'e apresentada como:
@@ -147,7 +154,7 @@ Neste caso, a nota\cao do lado esquerdo da equa\cao \ref{eq:qm16} \'e
 compactado atrav\'es do operador derivada substantiva $D/Dt$. A
 diferen\c ca dos referenciais \emph{Euleriano} e \emph{Lagrangiano} \'e
 que no primeiro o referencial se encontra fixo no espa\c co, enquanto
-que no segundo o referencial movimenta com a velocidade fluido. Estes
+que no segundo o referencial movimenta com a velocidade do fluido. Estes
 dois referenciais ainda podem ser descritos em uma forma \'unica e
 generalizada, conhecida como referencial \emph{Euleriano-Lagrangiano}
 arbitr\'ario onde a referencial pode n\~ao estar nem fixo, nem
@@ -158,7 +165,7 @@ recomenda-se: \cite{hughes1981} e \cite{donea1982}.
 
 \subsection{Abordagem Num\'erica}
 
-Em escoamentos bif\'asicos, \emph{two-phase flows} em ingl\^es, a
+Em escoamentos bif\'asicos, ou \emph{two-phase flows} em ingl\^es, a
 modelagem discreta da interface \'e o par\^ametro mais importante para
 se obter precis\~ao nos c\'alculos. Encontra-se na literatura duas
 abordagens cl\'assicas para representa\cao da interface entre dois
@@ -219,9 +226,9 @@ literatura de escoamentos bif\'asicos.
 %                     Volume of Fluid - VOF                       %
 % --------------------------------------------------------------- %
 Em 1980, o m\'etodo volume de fluido (\emph{Volume of Fluid} ou VOF na
-sigla em ingl\^es) foi proposto por \cite{}, no qual consiste na
+sigla em ingl\^es) foi proposto por \cite{hirt1981}, no qual consiste na
 descri\cao de cada fase atrav\'es do volume de fluido ocupado em cada
-elemento computacional. Os inteiros ''0`` e ''1`` s\~ao atribu\'idos
+elemento computacional. Os inteiros ``0'' e ``1'' s\~ao atribu\'idos
 para definir a regi\~ao ocupada na totalidade por cada fluido e valores
 intermedi\'arios s\~ao atribu\'idos nos elementos onde a interface \'e
 definida. Devido \`a descontinuidade proveniente desta metodologia, uma
@@ -255,10 +262,10 @@ comparadas a resultados experimentais, com isso provando a capacidade do
 c\'odigo em capturar os efeitos observados em fluidos com diferentes
 propriedades. 
 
-Em (\cite{chen1998}), um modelo de escoamento bif\'asico baseado no
+Em \cite{chen1998}, um modelo de escoamento bif\'asico baseado no
 m\'etodo \emph{VOF} foi desenvolvido para simular escoamentos com
 grande diferen\c ca na rela\cao de desidades. O modelo de for\c ca de
-superf\'icie cont\'inua (continuum surface force model (CSF) em
+superf\'icie cont\'inua (continuum surface force model - CSF  em
 ingl\^es) foi usado para obter-se os efeitos da tens\~ao superficial nas
 equa\c c\~oes de Navier-Stokes. A coalescencia de bolhas e a bolha em
 ascen\cao foram investigadas para valida\cao do c\'odigo num\'erico com
@@ -387,15 +394,129 @@ m\'etodo VOF s\~ao eliminados.
 % Front-tracking                                                  %
 % --------------------------------------------------------------- %
 
+Ao contr\'ario dos m\'etodos Level-Set e VOF, a descri\cao
+\emph{Lagrangiana} define a interface entre fluidos explicitamente
+atrav\'es de elementos computacionais. Tal descri\cao \'e conhecida como
+rastreamento de interface (\emph{interface tracking} no ingl\^es).
+Dentro desta classe de m\'etodos, \emph{volume-tracking} e
+\emph{front-tracking} s\~ao os que mais se destacam na literatura. O
+primeiro utiliza particulas marcadoras para reconstru\cao da interface,
+combinando precis\~ao e rigor com relativamente baixo custo de
+investimento (\cite{harlow1965},\cite{amsden1970}). O segundo,
+primeiramente implementado por \cite{glimm1988}, representa a interface
+atrav\'es de um conjunto de n\'os interconectados que se movem de acordo
+com o escoamento calculado no referencial \emph{Euleriano}. Tal
+descri\cao fornece uma representa\cao definida da interface com alta
+precis\~ao, entretanto sua desvantagem est\'a na necessiade de um
+tratamento explicito quando a interface apresenta mudan\c cas
+topol\'oligas, como no caso de coalescence e ruptura de interface.
+
+Em \cite{unverdi1992}, uma nova metodologia para simula\cao de
+escoamentos multif\'asicos foi descrita. As equa\c c\~oes foram
+discretizadas atrav\'es do m\'etodo de diferen\c cas finitas em uma
+malha estacion\'aria, com a interface definida explicitamente por um
+conjunto de objetos geom\'etricos tais como tri\^angulos, segmentos e
+pontos. Apesar da malha computacional de fundo ser est\'atica
+(descri\cao \emph{Euleriana}), a malha de interface se movia com a
+velocidade proveniente do escoamento. Os vetores normais \`a interface
+foram calculados a partir de fun\c c\~oes trigonom\'etricas em cada
+elemento da superf\'icie e a curvatura foi calculada atrav\'es de uma
+aproxima\cao da indicatrix \emph{Dupin} na superf\'icie. Por apresentar
+uma descri\cao explicita da interface, tal metodologia definiu com
+precis\~ao a superf\'icie que separa os fluids, entretanto as
+propriedades dos fluidos n\~ao foram precisamente definidas,
+necessitando ent\~ao de um tratamento num\'erico especial.  
+
+Um modelo Level-Set \emph{Lagrangiano} foi proposto por
+\cite{souza2005} para simula\cao de escoamentos incompress\'iveis 
+bif\'asicos. As esqua\c c\~oes de governo foram discretizadas atrav\'es
+do m\'etodo de \emph{Galerkin} e elementos finitos, enquanto que o
+sistema linear resultante for tratado atrav\'es do m\'etodo da
+proje\cao, visando desacoplar velocidade e press\~ao. A interface entre
+fluidos era representada pela pr\'opria malha do dom\'inio e ent\~ao
+movida pelo campo de velocidade. Tal modelo dispensa o uso de uma
+equa\cao hiperb\'olica adicional, uma vez que a interface \'e descrita
+por pontos e segmentos da pr\'opia malha computacional bidimensional. O
+controle de malha foi feito atrav\'es de procedimentos padr\~oes tais
+quais \emph{flipping}, adi\cao e remo\cao de arestas e n\'os. Pela
+defini\cao da fun\cao de Level-Set $\phi$, foi poss\'ivel calcular
+diretamente a curvatura e os vetores normais \`a interface atrav\'es das
+express\~oes: $\kappa=\nabla
+\cdot(\nabla \phi/|\nabla \phi|)$ e $\nvet = \nabla \phi / |\nabla
+\phi|$, consecutivamente. Com isso, para satisfazer o balan\~co de
+for\~ca discreto entre press\~ao e tens\~ao superficial, o gradiente da
+fun\cao de \emph{Heaviside} $\nabla H$ foi usado como substituto da
+fun\cao Delta de Dirac $\delta$, encontrado no modelo de for\c ca de
+superf\'icie continuo (CSF). Tal abordagem \'e comumente encontrada em
+modelos \emph{Eulerianos}, por\'em mostrou-se adequado para m\'etodos do
+tipo \emph{Interface-tracking}, uma vez que o salto de press\~ao
+atrav\'es da interface foi precisamente calculado.
+
+O grupo da Universidade de Massachustts sugeriu um modelo completo de
+malha din\^amica para simula\cao de escoamentos tipo superf\'icie livre
+e bif\'asicos (\cite{perot2003},\cite{quan2006}), no qual difere da
+abordagem de malha fixa. Neste caso, a discretiza\cao das equa\c c\~oes
+de governo foi feita sobre uma malha n\~ao estruturada com o aux\'ilio
+de um m\'etodo de passo fracional exato. Tal t\'eqnica melhora a
+defini\cao da interface, uma vez que o salto de propriedades f\'isicas
+\'e mantido definido. A valida\c c\~ao da metodoligia foi realizada com
+sucesso atrav\'es de v\'arios testes num\'ericos comparativos, mostrando
+que a t\'ecnica pode ser utilizada para modelagem de escoamentos
+bif\'asicos com precis\~ao.
+
+Um novo m\'etodo de malha que se move junto ao campo de velocidades \'e
+proposto por \cite{anjos2012}. Neste, as equa\'c\~oes de governo s\~ao
+discretizadas atrav\'es do m\'etodo de elementos finitos, usando a
+descri\~cao generalizada arbitr\'aria \emph{Euleriana-Lagrangiana}. Este
+m\'etodo tamb\'em permite uma representa\cao precisa da interface, uma
+vez que esta \'e definida atrav\'es de elementos computacionais e
+pertencentes a malha do dom\'inio. V\'arios testes e valida\c c\~oes
+foram apresentados, mostrando que a metodologia descreve com precis\~ao
+escomanetos bif\'asicos.
+
+\subsection{Abordagem experimental}
+
+Para iniciarmos a introdu\~cao \`as t\'ecnias experimentais, passamos
+pela defini\cao de importantes par\^ametros utilizados na
+caracteriza\cao do escoamento bif\'aisco. A seguir, são identificados
+padr\~oes de estruturas encontrados frequentemente em escoamentos
+multif\'asicos em canais. \'E importante notar que a literatura
+dispon\'ivel em escoamentos com mais de uma fase \'e extenso...
+
+\subsection{Qualidade de vapor}
+
+A qualidade de vapor ($x$) \'e definida como sendo a raz\~ao da vaz\~ao
+m\'assica de vapor ($\dot{M}_V$) dividida pela vaz\~ao m\'assica total
+($\dot{M}_V+\dot{M}_L$):
+
+\begin{equation}
+	x = \frac{\dot{M}_V}{\dot{M}_V+\dot{M}_L}
+\end{equation}
+
+\subsection{Fluxo de massa}
+
+O fluxo de massa ($G$) \'e definido como sendo a vaz\~ao m\'assica total
+($\dot{M}$) divida pela \'area transversal do escoamento:
+
+\begin{equation}
+	G = \frac{\dot{M}}{A}
+\end{equation}
+
+\subsection{Fra\cao de vazios}
+
+\begin{equation}
+	\epsilon = \frac{A_V}{A_V+A_L}
+\end{equation}
+
 
 \subsection{Escoamentos horizontais}
 
-
 \subsection{Escoamentos verticais}
-
 
 \subsection{Exerc\'icios}
 
+1) Descreva a diferen\c ca entre referencial \emph{Euleriano} e
+\emph{Lagrangiano}.
 
 
 \bibliographystyle{elsarticle-num-names}
