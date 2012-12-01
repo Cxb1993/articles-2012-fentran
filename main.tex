@@ -146,7 +146,7 @@ movimenta\cao do fluido.
 	\rho \frac{D \vvet}{D t}
 	= -\nabla p + \nabla \cdot [ \mu (\nabla \vvet + \nabla \vvet^T) ] +  
 	\rho \gvet +
-	\fvet
+	\fvet_{s}
 \label{eq:qmFinal}
 \end{equation} \vspace{0.0cm}
 
@@ -161,7 +161,119 @@ arbitr\'ario onde a referencial pode n\~ao estar nem fixo, nem
 movimentando conforme o escoamento, e sim em uma velocidade
 arbitr\'aria. Entretanto, a defini\cao deste referencial n\~ao est\'a
 presente no escopo deste cap\'itulo. Para o leitor interessado,
-recomenda-se: \cite{hughes1981} e \cite{donea1982}.
+recomenda-se: \cite{hughes1981} e \cite{donea1982}. 
+
+\subsection{Adimensionaliza\cao das Equa\c c\~oes de Governo}
+
+Esta sec\cao descreve a adimensionaliza\cao das equa\c c\~oes de
+conversa\cao de massa e quantidade de movimento. Tal procedimento
+melhora o entendimento e a an\'alise da influ\^encia de cada termo na
+equa\cao. Duas equa\c c\~oes distintas ser\~ao apresentadas. A primeira
+\'e comumente usada quando a velocidade a dimens\~ao caracter\'isticas
+s\~ao conhecidas. A segunda \'e geralmente empregada para o caso de escoamentos
+regidos pelo campo gravitacional, sem entrada de fluido. Neste caso a
+gravidade deve ser considerada como par\^ametro conhecido, com isso a
+velocidade \'e um resultado, e n\~ao uma condi\cao preestabelecida. 
+
+As equa\c c\~oes de conserva\cao de massa e quantidade de movimento
+s\~ao adimensionalizadas pela defini\cao dos seguintes par\^ametros
+adimensionais:
+
+\begin{align}
+	\rho
+	&=
+	\rho_{\infty} \rho^* & x
+	&=
+	Lx^* & \qquad \gvet
+	&=
+	g_{\infty} \gvet^* & \qquad \cvet
+	&= U \cvet^*
+	\nonumber
+	\\
+	\mu
+	&=
+	\mu_{\infty} \mu^* & \vvet
+	&=
+	U \vvet^* & \qquad t
+	&=
+	\frac{L}{U}t^*  &\qquad \kappa
+	&=
+	\frac{1}{L}\kappa^*
+	\nonumber
+	\\
+	p
+	&=
+	\rho_{\infty} U^2 p^* & \frac{\partial}{\partial t}
+	&=
+	\frac{U}{L}\frac{\partial}{\partial t^*} & \qquad \nabla
+	&=
+	\frac{1}{L}\nabla^* & \qquad \sigma
+	&= \sigma_0 \sigma^* 
+	\nonumber
+\end{align}\vspace{0.0cm}
+
+\noindent onde o sobrescrito $*$ representa as vari\'aveis
+adimensionais. Seguindo o procedimento apresentado pelo Cap.~(Referencia
+para volume 1) no Volume 1 deste livro, o processo de
+adimensionaliza\cao das equa\c c\~oes de governo para escoamento
+multif\'asico incompress\'iviel chega a:
+
+\begin{equation}
+	\nabla \cdot \vvet 
+	= 
+	0
+\label{eq:massAdimenFinal} 
+\end{equation}\vspace{0.0cm}
+
+\noindent e
+
+\begin{equation}
+	\frac{\partial \vvet}{\partial t}+
+	\vvet \cdot \nabla \vvet
+	=
+	-\nabla p + \frac{1}{Re}
+	\nabla \cdot [\mu (\nabla \vvet + \nabla \vvet^{T})] +
+	\frac{1}{Fr^2} \gvet
+	\frac{1}{We} \fvet_{s}
+	\label{eq:momentumAdimenFinal}
+\end{equation}\vspace{0.0cm}
+
+\noindent nas equa\c c\~oes adimensionais apresentadas acima, os
+n\'umero de \emph{Reynolds} ($Re$) representa a
+raz\~ao das for\c cas inercial e viscosa, o n\'umero de \emph{Weber}
+($Fr$) representa a raz\~ao das for\c cas inercial e gravitacional e,
+finalmente, o n\'umero de \emph{Weber} ($We$) representa a raz\~ao das
+for\c cas inercial e de tens\~ao superficial.
+
+A adimensionaliza\cao das equa\c c\~oes de governo apresentadas
+consideram que a velocidade do escoamento \'e um par\^ametro conhecido.
+Entretanto, em alguns casos onde a velocidade \'e consequ\^encia de uma
+condi\cao e n\~ao \'e imposta diretamente no sistema, um par\^ametro de
+adimensionaliza\cao diferente deve ser usado no lugar. Como exemplo pode
+se citar o caso de uma bolha de g\'as em ascens\~ao em uma coluna de
+l\'iquido im\'ovel. Neste sistema, o campo de velocidades \'e o
+resultado, com isso n\~ao pode ser usado como referencial. Ent\~ao, a
+velocidade $\vvet$ \'e comumente adimensionaliza por $\sqrt{g D}$ e o
+comprimento caracter\'istico $L$ pelo di\^ametro da bolha $D$.
+Substituindo estes par\^ametros na Eq.~(\ref{eq:qmFinal}), a equa\cao
+final de conserva\cao de quantidade de movimento se escreve como:
+
+\begin{equation}
+	\frac{\partial \vvet}{\partial t}+
+	\vvet \cdot \nabla \vvet
+	=
+	-\nabla p + 
+	\frac{1}{N^2}
+	\nabla\cdot [\mu(\nabla\vvet+\nabla \vvet^{T})] +
+	\gvet +
+	\frac{1}{Eo} \fvet_{s}
+	\label{eq:momentumAdimenFinal2}
+\end{equation}\vspace{0.0cm}
+
+\noindent onde o n\'umero de \emph{Archimedes} ($N$) representa a
+raz\~ao das for\c cas inercial e gravitacional, enquanto que o n\'umero
+de \emph{E\"otv\"os} number $(Eo)$ representa a raz\~ao das for\c cas de
+gravidade e tens\~ao superficial.
 
 \subsection{Abordagem Num\'erica}
 
@@ -474,14 +586,17 @@ pertencentes a malha do dom\'inio. V\'arios testes e valida\c c\~oes
 foram apresentados, mostrando que a metodologia descreve com precis\~ao
 escomanetos bif\'asicos.
 
-\subsection{Abordagem experimental}
+\subsection{Abordagem emp\'irica ou experimental}
 
 Para iniciarmos a introdu\~cao \`as t\'ecnias experimentais, passamos
 pela defini\cao de importantes par\^ametros utilizados na
-caracteriza\cao do escoamento bif\'aisco. A seguir, são identificados
-padr\~oes de estruturas encontrados frequentemente em escoamentos
-multif\'asicos em canais. \'E importante notar que a literatura
-dispon\'ivel em escoamentos com mais de uma fase \'e extenso...
+caracteriza\cao do escoamentos bif\'aiscos. A seguir, ser\~ao
+identificados padr\~oes encontrados frequentemente em escoamentos
+multif\'asicos em canais verticais e horizontais. \'E importante notar
+que a literatura dispon\'ivel em escoamentos com mais de uma fase \'e
+extenso e n\~ao se limita aos exemplos introdut\'orios apresentados
+neste cap\'itulo. Ao leitor que deseja aprofundar tais conceitos,
+sugerimos \cite{collier1996}, \cite{whalley1987} e \cite{carey2007}.
 
 \subsection{Qualidade de vapor}
 
@@ -509,28 +624,13 @@ O fluxo de massa ($G$) \'e definido como sendo a vaz\~ao m\'assica total
 \end{equation}
 
 
-\subsection{Escoamentos horizontais}
-
-\begin{figure}[h!]
-	\begin{center}
-		\subfloat[bolhas (\emph{bubbly})]
-		{\includegraphics[angle=00, scale=0.3]{h_bubbly.pdf}}\\
-		\subfloat[\emph{plug}]
-		{\includegraphics[angle=00, scale=0.3]{h_plug.pdf}}\\
-		\subfloat[golfada (\emph{slug})]
-		{\includegraphics[angle=00, scale=0.3]{h_slug.pdf}}\\
-		\subfloat[estratificado (\emph{stratified})]
-		{\includegraphics[angle=00, scale=0.3]{h_stratified.pdf}}\\
-		\subfloat[ondulado (\emph{wavy})]
-		{\includegraphics[angle=00, scale=0.3]{h_wavy.pdf}}\\
-		\subfloat[anelar (\emph{annular})]
-		{\includegraphics[angle=00, scale=0.3]{h_annular.pdf}}
-	\end{center}
-	\caption{}
-	\label{fig:horizontal} 
-\end{figure}
-
 \subsection{Escoamentos verticais}
+
+Os pad\~oes de escoamentos para cima em tubos verticais \'e apresentado
+esquematicamente na Fig.~(\ref{fig:vertical}). As diferen\c cas
+b\'asicas observadas experimentalmente s\~ao descritas a seguir. \'E
+importante notar que a utiliza\cao de cada padr\~ao de escoamento
+depende da sua aplica\cao. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -546,18 +646,98 @@ O fluxo de massa ($G$) \'e definido como sendo a vaz\~ao m\'assica total
 		\subfloat[]
 		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.pdf}
 		\hspace{0.4cm}}
-		\subfloat[anelar (\emph{annular})]
+		\subfloat[anular (\emph{annular})]
 		{\includegraphics[angle=00, scale=0.3]{v_annular.pdf}}
+	\end{center}
+	\caption{}
+	\label{fig:vertical} 
+\end{figure}
+
+\begin{itemize}
+	\item Bolhas dispersas ou \emph{Bubbly flow}: no escoamento em
+	bolhas, o gas ou a fase vapor est\'a distribuida na fase cont\'inua
+	l\'iquida como um aglomerado de bolhas. Em uma situa\cao extrema,
+	estas bolhas podem apresentar formato esf\'erico e de pequeno
+	di\^ametro ou apresentar formato de corpo alongado com a uma das
+	extremidades arredondadas. Neste \'ultimo estado, mesmo n\~ao
+	apresentando tamanhos compar\'aveis ao di\^ametro do tubo, o
+	padr\~ao das bolhas pode trazer alguma semelhan\c ca ao escoamento
+	em golfadas.
+	\item Golfadas ou \emph{Slug flow}: neste tipo de escoamento, as
+	bolhas apresentam aproximadamente o mesmo di\^ametro do tubo, com
+	isso os efeitos de parede s\~ao mais evidentes. O nariz da bolha tem
+	um formato caracter\'istico arrendodado devido \`a press\~ao e ao
+	escoamento, enquanto que as laterais s\~ao separadas por um filme
+	l\`iquido que vai suavemente diminuido at\'e chegar \`a parte de
+	tr\'as da bolha. O termo \emph{slug} representa o l\'iquido que
+	separa sucessivas bolhas de g\'as ou vapor. Dependendo do
+	escoamento, pequenas bolhas podem ou n\~ao estar presentes entre as
+	bolhas principais.
+	\item \emph{Churn flow}: a interface de largas bolhas 
+	de g\'as ou vapor se quebra, formando o escoamento do tipo golfadas
+	em uma distribui\cao ca\'otica. Nele, a fase l\'iquida \'e impurrada
+	em dire\cao \`as paredes do canal. Este escoamento tamb\'em \'e
+	conhecido como semi-anular ou golfada-anular, devido ao car\'arter
+	transit\'orio deste padr\~ao.
+	\item \emph{Wispy-annular flow}: o filme l\'iquido apresenta grande
+	espessura nas paredes do tubo com uma consider\'avel quantidade de
+	l\'iquido arrastada para dentro do n\'ucleo de g\'as ou vapor. Este
+	tipo de padr\~ao de escoamento foi primeiramente identificado pelo
+	trabalho de \cite{hewitt1970}. Em um padr\~ao geral, muitas bolhas
+	s\~ao encontradas no filme l\'iquido pr\'oximo \`as parades do tubo,
+	enquanto que grandes gotas s\~ao arrastadas dentro do n\'ucleo de
+	g\'as ou vapor. Este padr\~ao de escoamento \'e encontrado em
+	grandes vaz\~oes m\'assicas e, devido \'a grande quantidade de
+	bolhas no filme l\'iquido, este escoamento pode ser confundido com o
+	escoamento em bolhas. 
+	\item anular ou \emph{Annular flow}: um filme l\'iquido \'e formado
+	pr\'oximo \`as paredes do tubo devido ao aparecimento de um n\'uclo
+	cont\'inuo de g\'as ou vapor no meio do tubo. O aparecimento de
+	ondas pode ser notado na superf\'icie do filme. Devido a sucessiva
+	quebra destas ondas, pode haver a forma\cao de gotas no n\'ucleo de
+	g\'as ou vapor. Diferentemente do escoamento do tipo
+	\emph{Wispy-annular}, as gotas est\~ao separadas ao in\'es de
+	aglomeradas.
+\end{itemize}
+
+\subsection{Escoamentos horizontais}
+
+
+
+\begin{figure}[h!]
+	\begin{center}
+		\subfloat[Bolhas dispersas (\emph{Bubbly})]
+		{\includegraphics[angle=00, scale=0.3]{h_bubbly.pdf}}\\
+		\subfloat[\emph{plug}]
+		{\includegraphics[angle=00, scale=0.3]{h_plug.pdf}}\\
+		\subfloat[Golfadas (\emph{Slug})]
+		{\includegraphics[angle=00, scale=0.3]{h_slug.pdf}}\\
+		\subfloat[Estratificado (\emph{Stratified})]
+		{\includegraphics[angle=00, scale=0.3]{h_stratified.pdf}}\\
+		\subfloat[Estratificado Ondulado (\emph{Wavy})]
+		{\includegraphics[angle=00, scale=0.3]{h_wavy.pdf}}\\
+		\subfloat[Anular (\emph{Annular})]
+		{\includegraphics[angle=00, scale=0.3]{h_annular.pdf}}
 	\end{center}
 	\caption{}
 	\label{fig:horizontal} 
 \end{figure}
+
+\begin{itemize}
+	\item Bolhas dispersas ou \emph{Bubble flow}:
+	\item \emph{Plug flow}:
+	\item Estratificado ou \emph{Stratified}:
+	\item Estratificado ondulado ou \emph{Wavy}:
+	\item Anular ou \emph{Annular}:
+\end{itemize}
 
 \subsection{Exerc\'icios}
 
 1) Descreva a diferen\c ca entre referencial \emph{Euleriano} e
 \emph{Lagrangiano}.
 
+2) Mostre as diferen\c ca entre escoamentos em bolhas e golfadas para
+tubos verticais.
 
 \bibliographystyle{elsarticle-num-names}
 \bibliography{$HOME/projects/misc/latex/referencias}
