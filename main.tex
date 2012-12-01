@@ -601,12 +601,40 @@ sugerimos \cite{collier1996}, \cite{whalley1987} e \cite{carey2007}.
 \subsection{Qualidade de vapor}
 
 A qualidade de vapor ($x$) \'e definida como sendo a raz\~ao da vaz\~ao
-m\'assica de vapor ($\dot{M}_V$) dividida pela vaz\~ao m\'assica total
-($\dot{M}_V+\dot{M}_L$):
+m\'assica de vapor ($\dot{M}_G$) dividida pela vaz\~ao m\'assica total
+($\dot{M}_G+\dot{M}_L$):
 
 \begin{equation}
-	x = \frac{\dot{M}_V}{\dot{M}_V+\dot{M}_L}
+	x = \frac{\dot{M}_G}{\dot{M}_G+\dot{M}_L}
 \end{equation}
+
+Quando o escoamento \'e adiab\'atico, ou seja n\~ao h\'a transfer\^encia
+de calor, se torna necess\'ario a medida de vaz\~ao m\'assica para cada
+fase, com isso a qualidade de vapor \'e determinada para todo o tubo. Se
+o tubo \'e aquecido e fluxos de massa s\~ao notados no sistema, a
+qualidade de vapor aumentar\'a na dire\cao do escomaento. No entando,
+para o caso de resfriamento do tubo e, consequentemente, a condensa\cao
+do vapor, a qualidade de vapor diminuir\'a na dire\cao do escoamento.
+
+\subsection{Velocidades}
+
+Em escoamentos multif\'asicos existem um grande n\'umero de velocidades
+que podem ser definidas experimentalmente. Ainda, como os fluidos
+est\~ao em fases distintas, diferentes velocidades podem ser
+encontradas, sugerindo tamb\'em o uso de velocidade relativa como base
+para caracteriza\cao da velocidade do escoamento. A seguir s\~ao
+definidas algumas importantes velocidades encontradas na literatura.
+
+\begin{itemize}
+	\item Velocidade Verdadeira m\'edia (\emph{True average velocity}):
+	\'e a velocidade em que cada fase se movimenta no escoamento.
+	\item Velocidade superficial (\emph{Superficial velocity}:
+	tamb\'em conhecida como fluxo volum\'etrico, \'e definida como a
+	raz\~ao do fluxo de velocidade da fase considerada pela \'area
+	transversal total do escoamento multif\'asico.
+	\item Velocidade de deriva (\emph{Drift velocity}): raz\~ao da
+	velocidade verdadeira m\'edia pela velocidade superficial total.
+\end{itemize}
 
 \subsection{Fluxo de massa}
 
@@ -617,12 +645,70 @@ O fluxo de massa ($G$) \'e definido como sendo a vaz\~ao m\'assica total
 	G = \frac{\dot{M}}{A}
 \end{equation}
 
+\noindent onde a express\~ao acima representa a rela\cao entre a
+velocidade m\'edia do escoamento multiplicada pela densidade m\'edia. A
+unidade usual de fluxo de massa \'e $[kg/m^2 s]$.
+
 \subsection{Fra\cao de vazios}
 
+A fra\cao de vazios $\epsilon$, ou \emph{Void Fraction} em ingl\^es, \'e
+um dos par\^ametros mais importantes para caracteriza\cao de escoamentos
+multif\'asicos. Este tamb\'em \'e de grande import\^ancia para a
+determina\cao de outros par\^ametros, tais como viscosidade e densidade
+em escoamentos multif\'asicos, obten\cao de velocidade m\'edia relativa
+e, tamb\'em, como ferramenta fundamental em modelos de previs\~ao de
+transi\cao de padr\~oes de escoamentos. 
+
+Na literatura existem v\'arias defini\c c\~oes para especifica\cao de
+fra\cao de volume (veja \cite{thome2008}). Aqui ser\~ao apresentadas as
+principais defini\c c\~oes de fra\cao de vazios: local, cordal,
+transversal e volum\'etrica. 
+
 \begin{equation}
-	\epsilon = \frac{A_V}{A_V+A_L}
+	\epsilon_{local}(r,t) 
+	= 
+	\frac{1}{t} \int_t P_k(r,t) dt
 \end{equation}
 
+A fra\cao de vazios local $\epsilon_{local}$ \'e tipicamente medida
+atrav\'es de um feixe radioativo brilhante que atravessa o tubo onde o
+escoamento multif\'asico est\'a localizado. Atrav\'es da absorv\cao de
+luz neste feixe no outro lado do tubo, \'e poss\'ivel medir o
+comprimento da fase gasosa. A vaz\~ao de vazios local \'e ent\~ao
+determinada por: 
+
+\begin{equation}
+	\epsilon_{chordal} = \frac{L_G}{L_G+L_L}
+\end{equation}
+
+\noindent onde $L_G$ \'e o comprimento de linha na fase gasosa e $L_L$
+na fase l\'iquida.
+
+A fra\cao de vazios transversal $\epsilon_{trans}$, ou
+\emph{cross-sectional} em ingl\^es, \'e medida a partir de meios
+\'oticos ou atrav\'es de medidas indiretas, tal como a capacit\^ancia
+el\'etrica de uma fase l\'iquida condutora. Esta fra\cao \'e definida
+como:
+
+\begin{equation}
+	\epsilon_{trans} = \frac{A_G}{A_G+A_L}
+\end{equation}
+
+\noindent onde $A_G$ \'e a area ocupada da fase gasosa e $L_L$
+da fase l\'iquida.
+
+A fra\cao de vazios volum\'etrica $\epsilon_{vol}$ \'e medida geralmente
+atrav\'es de mecanismos de armadilha para os fluidos, onde por um
+instante breve a amostra fica armazenada, possibilitando a medida da
+quantidade de gas e l\'iquido diretamente. Esta fra\cao \'e ent\~ao
+definda como:
+
+\begin{equation}
+	\epsilon_{vol} = \frac{V_G}{V_G+V_L}
+\end{equation}
+
+\noindent onde $V_G$ \'e o volume ocupado da fase gasosa e $L_L$
+da fase l\'iquida.
 
 \subsection{Escoamentos verticais}
 
@@ -654,7 +740,7 @@ depende da sua aplica\cao.
 \end{figure}
 
 \begin{itemize}
-	\item Bolhas dispersas ou \emph{Bubbly flow}: no escoamento em
+	\item Bolhas dispersas ou \emph{Bubbly}: no escoamento em
 	bolhas, o gas ou a fase vapor est\'a distribuida na fase cont\'inua
 	l\'iquida como um aglomerado de bolhas. Em uma situa\cao extrema,
 	estas bolhas podem apresentar formato esf\'erico e de pequeno
@@ -663,7 +749,7 @@ depende da sua aplica\cao.
 	apresentando tamanhos compar\'aveis ao di\^ametro do tubo, o
 	padr\~ao das bolhas pode trazer alguma semelhan\c ca ao escoamento
 	em golfadas.
-	\item Golfadas ou \emph{Slug flow}: neste tipo de escoamento, as
+	\item Golfadas ou \emph{Slug}: neste tipo de escoamento, as
 	bolhas apresentam aproximadamente o mesmo di\^ametro do tubo, com
 	isso os efeitos de parede s\~ao mais evidentes. O nariz da bolha tem
 	um formato caracter\'istico arrendodado devido \`a press\~ao e ao
@@ -702,13 +788,18 @@ depende da sua aplica\cao.
 
 \subsection{Escoamentos horizontais}
 
-
+Os padr\~oes de escoamento comumente encontrados em escoamentos
+tubulares horizontais e inclinados s\~ao complexos devido \`a sua
+natureza n\~ao sim\'etrica causada pelo influ\^encia do campo
+gravitacional. Entretanto s\~ao bem considerados at\'e hoje os padr\~oes
+multif\'asicos sugeridos por \cite{alves1954} e apresentados
+esquematicamentes na Fig.~(\ref{fig:horizontal}). 
 
 \begin{figure}[h!]
 	\begin{center}
 		\subfloat[Bolhas dispersas (\emph{Bubbly})]
 		{\includegraphics[angle=00, scale=0.3]{h_bubbly.pdf}}\\
-		\subfloat[\emph{plug}]
+		\subfloat[Bolhas (\emph{plug})]
 		{\includegraphics[angle=00, scale=0.3]{h_plug.pdf}}\\
 		\subfloat[Golfadas (\emph{Slug})]
 		{\includegraphics[angle=00, scale=0.3]{h_slug.pdf}}\\
@@ -724,12 +815,40 @@ depende da sua aplica\cao.
 \end{figure}
 
 \begin{itemize}
-	\item Bolhas dispersas ou \emph{Bubble flow}:
-	\item \emph{Plug flow}:
-	\item Estratificado ou \emph{Stratified}:
-	\item Estratificado ondulado ou \emph{Wavy}:
-	\item Anular ou \emph{Annular}:
+	\item Bolhas dispersas ou \emph{Bubbly}: este escoamento \'e
+	similar ao apresentado anteriormente para escoamento vertical, com a
+	diferen\c ca que as bolhas de g\`as ou vapor tendem a se movimentar
+	na metada superior do tubo. Fato justificado pela menor densidade da
+	bolha comparada ao l\'iquido. Em uma velocidade moderada de ambas as
+	fases presente no escoamento, a distribui\cao de bolhas \'e uniforme
+	ao longo do tubo, enquanto que para velocidades mais elevadas o
+	padr\~ao de escoamento se assemelha ao \emph{Wispy-annular}.
+	\item Bolhas \emph{Plug}: escoamento similar ao do tipo golfadas em
+	tubos verticais. Como no caso de bolhas dispersas, a bolhas de g\'as
+	ou vapor tendem a atravessar o tubo na metada superior, devido ao
+	campo gravitacional.
+	\item Estratificado ou \emph{Stratified}: escoamento separado por
+	uma interface suave, onde geralemente \'e encontrado em baixas
+	velocidades das fases l\'iquida e gasosa.
+	\item Estratificado ondulado ou \emph{Wavy}: as ondas s\~ao formadas
+	quando a velocidade na fase gasosa \'e aumentada. Estas ondas se
+	movimentam na direc\~ao do escoamento.  
+	\item golfada ou \emph{Slug}: com o aumento da velocidade da fase
+	de vapor, a amplitude das ondas tamb\'em aumenta, se aproximando da
+	parede do tubo. A parte superior do tubo atr\'as da onda \'e molhada
+	por um filme l\'iquido que \'e drenado para o meio da fase
+	l\'iquido.
+	\item Anular ou \emph{Annular}: a vaz\~ao da fase gasosa \'e t\~ao
+	alta que \'e capaz de sustentar a fase l\'iquida pr\'oxima \`a
+	parade do tubo, originando um n\'ucleo de g\'as ou vapor. Em sua
+	se\cao transversal, o l\'iquido pode n\~ao ser cont\'inuo ao redor
+	de toda a circunfer\^ncia, po\'em ser\'a mais espessa na base do
+	tubo.
 \end{itemize}
+
+\subsection{Mapa de padr\~oes de escoamentos}
+
+
 
 \subsection{Exerc\'icios}
 
@@ -738,6 +857,10 @@ depende da sua aplica\cao.
 
 2) Mostre as diferen\c ca entre escoamentos em bolhas e golfadas para
 tubos verticais.
+
+3) Por que em escoamentos horizontais do tipo Bolhas dispersas, a bolhas
+tendem a viajar na metade superior do tubo? Qual o par\^ametro
+adimensional caracteriza este fen\^omeno?
 
 \bibliographystyle{elsarticle-num-names}
 \bibliography{$HOME/projects/misc/latex/referencias}
