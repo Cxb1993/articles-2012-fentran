@@ -847,8 +847,60 @@ esquematicamentes na Fig.~(\ref{fig:horizontal}).
 \end{itemize}
 
 \subsection{Mapa de padr\~oes de escoamentos}
+Os mapas de padr\~oes de escoamento s\~ao utilizados para a
+identifica\cao do tipo de escoamento (golfadas, anular, estratificado
+etc.) atrav\'es de par\^ametros conhecidos como vaz\~ao m\'assica,
+fra\cao de vazios, qualidade de vapor etc. Estes mapas existem para
+diferentes tipos de fluidos, dimens\~ao de tubos, graus de mistura e
+muitos outros. Basicamente, eles podem ser dividos em duas classes:
+adiab\'aticos e diab\'aticos. O primeiro \'e usualmente utilizado para
+escoamentos do tipo ar/\'agua, enquanto o segundo pode ser encontrado em
+refrigerantes em evapora\cao. 
 
+Os mapas de padr\~oes s\~ao representados como \'areas em gr\'aficos, em
+fun\cao das velocidades superficiais ou qualquer outro par\^ametro geral
+que contenha tal defini\cao . \'E importante notar que o padr\~ao de
+escoamento \'e tamb\'em influenciado por outros tipos de par\^ametros,
+por\'em sua descri\cao atrav\'es de gr\'aficos bi-dimensionais. Na
+literatura, muitos mapas podem ser encontrados para diferentes fluidos e
+em diferentes condi\c c\~oes. O leitor interessado poder\'a consultar
+algumas refer\^encias cl\'assicas como (\cite{collier1996},
+\cite{whalley1987} e \cite{thome2008}).
 
+A Fig.~(\ref{fig:map1}) representa um mapa de padr\~oes de escoamento
+para ar/\'agua, em condi\c c\~oes de press\~ao atmosf\'erica, para
+canais verticais (\cite{hewitt1969}). Neste mapa pode-se observar que
+cada padr\~ao de escoamento ocupa uma \'area no gr'afico e as linhas
+tracejadas delimitam a transi\cao.  Como pode-se observar tamb\'em,
+estas mesmas linhas n\~ao ocupam todo o limite do gr\'afico, o que
+sugere a falta de dados experimentais para descrever as transi\c c\~oes
+em toda a escala. \'E importante notar que estes mapas devem ser
+observados n\~ao mais do que um guia grosseiro de padr\~oes de
+escoamentos, pois os fluxos de quantidade de movimento por si s\'o n\~ao
+s\~ao capazes de representar com exatid\~ao a influ\^encia das
+propriedades f\'isicas do fluido nem o di\^ametro do tubo.
+
+A Fig.~(\ref{fig:map2}) descreve um outro mapa de padr\~oes, por\'em
+para escoamento horizontal (\cite{baker1954}). Este mapa \'e largamente
+utilizado na ind\'ustria petroqu\'imica. No mapa pode-se identificar os
+padr\~oes de escoamento em diferentes velocidades m\'assicas
+superficiais ($G_f$ e $G_g$). 
+
+\begin{figure}[ht!]
+	\includegraphics[scale=0.5,angle=-0.2]{hewitt1969.pdf}
+	\caption{Mapa de padr\~oes de escoamento vertical para ar/\'agua
+	(\cite{hewitt1969}). As linhas tracejadas representam a transi\cao
+	dos padr\~oes de escoamento.}
+	\label{fig:map1} 
+\end{figure}
+
+\begin{figure}[ht!]
+	\includegraphics[scale=0.5,angle=1.1]{baker1954.pdf}
+	\caption{Mapa de padr\~oes de escoamento horizontal para ar/\'agua
+	(\cite{baker1954}). As linhas cont\'inuas e tracejadas representam a
+	transi\cao dos padr\~oes de escoamento.}
+	\label{fig:map2} 
+\end{figure}
 
 \subsection{Exerc\'icios}
 
@@ -859,10 +911,13 @@ esquematicamentes na Fig.~(\ref{fig:horizontal}).
 tubos verticais.
 
 3) Por que em escoamentos horizontais do tipo Bolhas dispersas, a bolhas
-tendem a viajar na metade superior do tubo? Qual o par\^ametro
-adimensional caracteriza este fen\^omeno?
+tendem a se locomover na metade superior do tubo? Qual o par\^ametro
+adimensional que caracteriza este fen\^omeno?
 
-\bibliographystyle{elsarticle-num-names}
+4) Para que servem os mapas de padr\~oes de escoamento e como s\~ao
+classificados?
+
+\bibliographystyle{plain}
 \bibliography{$HOME/projects/misc/latex/referencias}
 
 \end{document}
