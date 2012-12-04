@@ -20,7 +20,7 @@
 \usepackage{rotating}				  % para rotacionar alguns flutuantes
 \usepackage{amscd}					  % para setas longas
 
-\graphicspath{{./figuras/}{./figs/}}  % onde encontrar as figuras...
+\graphicspath{{./figs/}{./figs/pdf/}}  % onde encontrar as figuras...
 
 \renewcommand{\baselinestretch}{1.5}  % espacamento entre linhas 
 \setlength{\mathindent}{15mm}         % espacamento das equacoes
@@ -68,6 +68,20 @@ chamamos de escoamentos multif\'asicos, onde o termo bif\'asico se
 refere \`a presen\c ca de apenas 2 fases (Ex. bolha de ar em um copo de
 \'agua). 
 
+\begin{figure}[h!]
+	\begin{center}
+		\subfloat[esfera em repouso]
+		{\includegraphics[angle=00, scale=0.3]{surfTension1.pdf}
+		\hspace{0.4cm}}
+		\subfloat[gotas em repouso]
+		{\includegraphics[angle=00, scale=0.3]{surfTension2.pdf}
+		\hspace{0.4cm}}
+		\subfloat[capilaridade]
+		{\includegraphics[angle=00, scale=0.3]{surfTension3.pdf}}
+	\end{center}
+	\caption{}
+	\label{fig:surfTension} 
+\end{figure}
 
 \subsection{Equa\c c\~oes de Governo}
 
