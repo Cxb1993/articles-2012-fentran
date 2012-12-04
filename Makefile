@@ -13,8 +13,9 @@ main.dvi: main.tex
 	bibtex $(@:%.dvi=%)
 	latex $(@:%.dvi=%.tex)
 	latex $(@:%.dvi=%.tex)
-	dvips -t a4 -o main.ps main.dvi
-	ps2pdf main.ps
+	dvips -t a4 -o $*.ps $*.dvi
+	ps2pdf $*.ps
+	@rm -fr $*.ps $*.dvi
 
 
 

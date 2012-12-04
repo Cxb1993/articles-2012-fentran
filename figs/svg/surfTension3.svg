@@ -15,7 +15,7 @@
    id="svg3347"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 7">
+   sodipodi:docname="surfTension3.svg">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -23,21 +23,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="361.59759"
-     inkscape:cy="365.06046"
+     inkscape:zoom="1.4"
+     inkscape:cx="413.86616"
+     inkscape:cy="653.33243"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="827"
      inkscape:window-height="743"
-     inkscape:window-x="500"
-     inkscape:window-y="109"
+     inkscape:window-x="244"
+     inkscape:window-y="178"
      inkscape:window-maximized="0" />
   <defs
      id="defs3349">
     <pattern
-       patternTransform="matrix(9.2948547,0,0,10.490117,92.329434,-590.28742)"
+       patternTransform="matrix(17.074037,-0.50170547,0.31063232,10.571437,381.23306,-349.87112)"
        id="pattern3345"
        xlink:href="#pattern7312"
        inkscape:collect="always" />
@@ -320,7 +320,7 @@
          style="fill:black;stroke:none" />
     </pattern>
     <pattern
-       patternTransform="matrix(9.2948547,0,0,10.490117,92.329892,-1042.1856)"
+       patternTransform="matrix(19.223426,0,0,10.204403,383.25383,-561.353)"
        id="pattern3514"
        xlink:href="#pattern3345-3"
        inkscape:collect="always" />
@@ -644,7 +644,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -660,9 +660,9 @@
     <rect
        style="fill:url(#pattern3345);fill-opacity:1;stroke:#000000;stroke-width:1.23430228;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4656"
-       width="610.15369"
-       height="36.242928"
-       x="227.20552"
+       width="497.01666"
+       height="36.24292"
+       x="340.34259"
        y="-196.31494"
        rx="0"
        ry="0"
@@ -670,10 +670,10 @@
     <rect
        style="fill:url(#pattern3514);fill-opacity:1;stroke:#000000;stroke-width:1.23430228;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect4656-7"
-       width="610.15369"
-       height="36.242928"
-       x="227.20599"
-       y="-648.21301"
+       width="502.97571"
+       height="40.692348"
+       x="334.38403"
+       y="-652.66241"
        rx="0"
        ry="0"
        transform="matrix(0,1,-1,0,0,0)" />
