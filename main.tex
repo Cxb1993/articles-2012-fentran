@@ -10,7 +10,7 @@
 \usepackage[brazil]{babel}            % pacote de linguagens 
 \usepackage{indentfirst}              % tab na primeira linha do paragrafo 
 \usepackage[hmargin=30mm,vmargin=25mm]{geometry}
-\usepackage[pdftex]{graphicx}         % pacote para inclusao de figuras,
+\usepackage{graphicx}         % pacote para inclusao de figuras,
 \usepackage{subfig,wrapfig}           % pacote para figuras duplas (subfigure)
 \usepackage{amssymb,amsmath,amsfonts} % pacote matematicos
 \usepackage{multirow}                 % multiplas linhas por coluna
@@ -20,7 +20,7 @@
 \usepackage{rotating}				  % para rotacionar alguns flutuantes
 \usepackage{amscd}					  % para setas longas
 
-\graphicspath{{./figs/}{./figs/pdf/}}  % onde encontrar as figuras...
+\graphicspath{{./figs/}{./figs.eps/}}  % onde encontrar as figuras...
 
 \renewcommand{\baselinestretch}{1.5}  % espacamento entre linhas 
 \setlength{\mathindent}{15mm}         % espacamento das equacoes
@@ -84,7 +84,7 @@ superficial. Este efeito f\'isico aparece na camada superficial do
 l\'iquido e age como uma membrana el\'astica. A tens\~ao superficial
 depende do sistema bif\'asico e pode variar conforme as propriedades
 f\'isicas dos fluidos, a temperatura ou, ainda, com a contamina\c c\~ao
-dos fluidos. No segundo exemplo s\~ao ilustradas 2 gotas em repouso.
+dos fluidos. No segundo exemplo s\~ao ilustradas duas gotas em repouso.
 Na figura pode-se observar que o contato do l\'iquido com uma
 superf\'icie s\'olida pode variar a forma da gota. Esta diferen\c ca de
 forma \'e atribuida ao tipo de superf\'ice em contato com o fluido. As
@@ -102,15 +102,22 @@ abaulamento do l\'iquido junto \`a superf\'icie do copo.
 \begin{figure}[h!]
 	\begin{center}
 		\subfloat[esfera em repouso]
-		{\includegraphics[angle=00, scale=0.3]{surfTension1.pdf}
+		{\includegraphics[angle=00, scale=0.3]{surfTension1.eps}
 		\hspace{0.4cm}}
-		\subfloat[gota em superf\'icie hidrof\'ilica]
-		{\includegraphics[angle=00, scale=0.3]{surfTension2.pdf}
+		\subfloat[hidrof\'ilica]
+		{\includegraphics[angle=00, scale=0.3]{surfTension2.eps}
 		\hspace{0.4cm}}
 		\subfloat[capilaridade]
-		{\includegraphics[angle=00, scale=0.3]{surfTension3.pdf}}
+		{\includegraphics[angle=00, scale=0.3]{surfTension3.eps}}
 	\end{center}
-	\caption{}
+	\caption{Exemplos de sistemas bif\'asicos encontrados na natureza.
+	(a) Esfera em repouso. Neste sistema a resultante das for\c cas \'e
+	zero pois o peso da esfera \'e correspondido pelo efeito da tens\~ao
+	superficial do l\'iquido. (b) Em uma superf\'icie hidrof\'ilica, a
+	gota tende a se espalhar, enquanto em uma (c) superf\'icie
+	hidrof\'obica, a gota tende a ficar concentrada em uma \'area de
+	contato menor. (d) Efeitos de capilaridade fazem o l\'iquido subir
+	sobre as paredes do tubo.}
 	\label{fig:surfTension} 
 \end{figure}
 
@@ -380,9 +387,9 @@ equa\c c\~ao adicional.
 
 \begin{figure}[ht!]
 		\subfloat[]{\label{fig:interface1}
-		\includegraphics[scale=0.32]{interface1.pdf}}
+		\includegraphics[scale=0.32]{interface1.eps}}
 		\subfloat[]{\label{fig:interface2}
-		\includegraphics[scale=0.32]{interface2.pdf}}
+		\includegraphics[scale=0.32]{interface2.eps}}
 	\caption{Representa\c c\~ao da interface em escoamentos bif\'asicos. (a)
 	Na descri\c c\~ao \emph{Euleriana}, a interface entre os fluidos \'e
 	definida em uma posi\c c\~ao arbitr\'aria em rela\c c\~ao aos elementos.
@@ -417,9 +424,9 @@ estruturada.
 
 \begin{figure}[ht!]
 		\subfloat[]{\label{fig:vof1}
-		\includegraphics[scale=0.45]{vof.pdf}}
+		\includegraphics[scale=0.45]{vof.eps}}
 		\subfloat[]{\label{fig:vof2}
-		\includegraphics[scale=0.6]{vofzoom.pdf}}
+		\includegraphics[scale=0.6]{vofzoom.eps}}
 	\caption{Representa\c c\~ao da interface no m\'etodo \emph{VOF}. (a) A
 	interface entre os fluidos \'e definida implicitamente e localizada
 	em algum lugar entre elementos computacionais. (b) A fun\c c\~ao
@@ -498,10 +505,10 @@ representam a interface quando o valor coincide com zero.
 
 \begin{figure}[ht!]
 		\subfloat[]{\label{fig:distance}
-		\includegraphics[scale=0.55]{distance.pdf}}
+		\includegraphics[scale=0.33]{distance.eps}}
 		\hspace{0.5cm}
 		\subfloat[]{\label{fig:level-set}
-		\includegraphics[scale=0.55]{level-set.pdf}}
+		\includegraphics[scale=0.33]{level-set.eps}}
 	\caption{Representa\c c\~ao das fun\c c\~oes dist\^ancia e Level-Set. A
 	interface entre os fluidos \'e localizada no meio do dom\'inio
 	computacional. (a) A fun\c c\~ao dist\^ancia \'e criada atrav\'es do
@@ -787,24 +794,56 @@ depende da sua aplica\c c\~ao.
 
 \begin{figure}[h!]
 	\begin{center}
-		\subfloat[Bolhas (\emph{Bubbly})]
-		{\includegraphics[angle=00, scale=0.3]{v_bubbly.pdf}
-		\hspace{0.4cm}}
-		\subfloat[Golfada (\emph{Slug})]
-		{\includegraphics[angle=00, scale=0.3]{v_slug.pdf}
-		\hspace{0.4cm}}
-		\subfloat[Batido (\emph{Churn})]
-		{\includegraphics[angle=00, scale=0.3]{v_churn.pdf}
-		\hspace{0.4cm}}
-		\subfloat[Pouco anular (\emph{Wispy-annular})]
-		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.pdf}
-		\hspace{0.4cm}}
-		\subfloat[Anular (\emph{Annular})]
-		{\includegraphics[angle=00, scale=0.3]{v_annular.pdf}}
+		\subfloat[Bolhas]
+		{\includegraphics[angle=00, scale=0.3]{v_bubbly.eps}
+		\hspace{0.8cm}}
+		\subfloat[Golfada]
+		{\includegraphics[angle=00, scale=0.3]{v_slug.eps}
+		\hspace{0.8cm}}
+		\subfloat[Batido]
+		{\includegraphics[angle=00, scale=0.3]{v_churn.eps}
+		\hspace{0.8cm}}
+		\subfloat[Pouco anular]
+		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.eps}
+		\hspace{0.8cm}}
+		\subfloat[Anular]
+		{\includegraphics[angle=00, scale=0.3]{v_annular.eps}}
 	\end{center}
-	\caption{}
+	\caption{Escoamentos bif\'asicos em tubos verticais. Em todos os
+	casos o escoamento se faz de baixo para a cima. Os efeitos
+	gravitacionais s\~ao uniformes ao longo do eixo horizontal, fazendo
+	com que o escoamento apresente alguma estrutura sim\'etrica.}
 	\label{fig:vertical} 
 \end{figure}
+
+%--------------------------------------------------
+% \begin{figure}[h!]
+% 	\begin{center}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_bubbly.eps}
+% 		\hspace{0.8cm}}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_slug.eps}
+% 		\hspace{0.8cm}}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_churn.eps}
+% 		\hspace{0.8cm}}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.eps}
+% 		\hspace{0.8cm}}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_annular.eps}}
+% 	\end{center}
+% 	\caption{Escoamentos bif\'asicos em tubos verticais. Em todos os
+% 	casos o escoamento se faz de baixo para a cima. Os efeitos
+% 	gravitacionais s\~ao uniformes ao longo do eixo horizontal, fazendo
+% 	com que o escoamento apresente alguma estrutura sim\'etrica. (a) Bolhas 
+% 	(\emph{Bubbly}), (b) Golfada (\emph{Slug}), (c) Batido
+% 	(\emph{Churn}), (d) Pouco anular (\emph{Wispy-annular}) e (e) Anular
+% 	(\emph{Annular}). }
+% 	\label{fig:vertical} 
+% \end{figure}
+%-------------------------------------------------- 
 
 \begin{itemize}
 	\item Bolhas dispersas ou \emph{Bubbly}: no escoamento em
@@ -864,20 +903,31 @@ de forma esquem\'atica na Fig.~(\ref{fig:horizontal}).
 
 \begin{figure}[h!]
 	\begin{center}
-		\subfloat[Bolhas dispersas (\emph{Bubbly})]
-		{\includegraphics[angle=00, scale=0.3]{h_bubbly.pdf}}\\
-		\subfloat[Bolhas (\emph{Plug})]
-		{\includegraphics[angle=00, scale=0.3]{h_plug.pdf}}\\
-		\subfloat[Golfadas (\emph{Slug})]
-		{\includegraphics[angle=00, scale=0.3]{h_slug.pdf}}\\
-		\subfloat[Estratificado (\emph{Stratified})]
-		{\includegraphics[angle=00, scale=0.3]{h_stratified.pdf}}\\
-		\subfloat[Estratificado ondulado (\emph{Wavy})]
-		{\includegraphics[angle=00, scale=0.3]{h_wavy.pdf}}\\
-		\subfloat[Anular (\emph{Annular})]
-		{\includegraphics[angle=00, scale=0.3]{h_annular.pdf}}
+% 		\subfloat[]
+% 		{\includegraphics[angle=00, scale=0.3]{v_bubbly.eps}
+% 		\hspace{0.8cm}}
+		\subfloat[Bolhas dispersas]
+		{\includegraphics[angle=00, scale=0.265]{h_bubbly.eps}
+ 		\hspace{0.2cm}}
+		\subfloat[Bolhas]
+		{\includegraphics[angle=00, scale=0.265]{h_plug.eps}}\\
+		\subfloat[Golfadas]
+		{\includegraphics[angle=00, scale=0.265]{h_slug.eps}
+ 		\hspace{0.2cm}}
+		\subfloat[Estratificado]
+		{\includegraphics[angle=00, scale=0.265]{h_stratified.eps}}\\
+		\subfloat[Estratificado ondulado]
+		{\includegraphics[angle=00, scale=0.265]{h_wavy.eps}
+ 		\hspace{0.2cm}}
+		\subfloat[Anular]
+		{\includegraphics[angle=00, scale=0.265]{h_annular.eps}}
 	\end{center}
-	\caption{}
+	\caption{Escoamentos bif\'asicos em tubos horizontais. Em todos os
+	casos o escoamento se faz da esquerda para a direta. Dependendo da
+	velocidade de entrada das fases, um padr\~ao pode ser identificado.
+	Como pode ser verificado pela posi\c c\~ao das bolhas, a gravidade
+	exerce uma influ\^encia imediata nas fases, uma vez que o fluido
+	menos denso tende a se movimentar na parte de cima do tubo.}
 	\label{fig:horizontal} 
 \end{figure}
 
@@ -934,7 +984,7 @@ em diferentes condi\c c\~oes. O leitor interessado poder\'a consultar
 algumas refer\^encias cl\'assicas como (\cite{collier1996},
 \cite{whalley1987} e \cite{thome2008}).
 
-A Fig.~(\ref{fig:map1}) representa um mapa de padr\~oes de escoamento
+A Fig.~(\ref{fig:map}a) representa um mapa de padr\~oes de escoamento
 para ar/\'agua, em condi\c c\~oes de press\~ao atmosf\'erica, para
 canais verticais (\cite{hewitt1969}). Neste mapa pode-se observar que
 cada padr\~ao de escoamento ocupa uma \'area no gr'afico e as linhas
@@ -947,26 +997,24 @@ escoamentos, pois os fluxos de quantidade de movimento por si s\'o n\~ao
 s\~ao capazes de representar com exatid\~ao a influ\^encia das
 propriedades f\'isicas do fluido nem o di\^ametro do tubo.
 
-A Fig.~(\ref{fig:map2}) descreve um outro mapa de padr\~oes, por\'em
+A Fig.~(\ref{fig:map}b) descreve um outro mapa de padr\~oes, por\'em
 para escoamento horizontal (\cite{baker1954}). Este mapa \'e largamente
 utilizado na ind\'ustria petroqu\'imica. No mapa pode-se identificar os
 padr\~oes de escoamento em diferentes velocidades m\'assicas
 superficiais ($G_f$ e $G_g$). 
 
 \begin{figure}[ht!]
-	\includegraphics[scale=0.5,angle=-0.2]{hewitt1969.pdf}
-	\caption{Mapa de padr\~oes de escoamento vertical para ar/\'agua
-	(\cite{hewitt1969}). As linhas tracejadas representam a transi\c c\~ao
-	dos padr\~oes de escoamento.}
-	\label{fig:map1} 
-\end{figure}
-
-\begin{figure}[ht!]
-	\includegraphics[scale=0.5,angle=1.1]{baker1954.pdf}
-	\caption{Mapa de padr\~oes de escoamento horizontal para ar/\'agua
-	(\cite{baker1954}). As linhas cont\'inuas e tracejadas representam a
-	transi\c c\~ao dos padr\~oes de escoamento.}
-	\label{fig:map2} 
+	\subfloat[]
+	{\includegraphics[scale=0.27,angle=-0.5]{hewitt1969.eps}}
+	\hspace{0.2cm}
+	\subfloat[]
+	{\includegraphics[scale=0.27,angle=1]{baker1954.eps}}
+	\caption{Mapas de padr\~oes de escoamento bif\'asico. As linhas
+	cont\'inuas e tracejadas representam a transi\c c\~ao
+	dos padr\~oes de escoamento. (a) Escoamento vertical para ar/\'agua
+	(\cite{hewitt1969}. (b) Escoamento horizontal para ar/\'agua
+	(\cite{baker1954}).}
+	\label{fig:map} 
 \end{figure}
 
 \subsection{Exerc\'icios}

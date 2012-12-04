@@ -6,13 +6,17 @@ PACKNAME=$(shell basename `pwd`)
 # REGRAS
 PDFFILE=$(TEXFILE:%.tex=%.pdf)
 
-all: main.pdf
+all: main.dvi
 
-main.pdf: main.tex
-	pdflatex $(@:%.pdf=%.tex)
-	bibtex $(@:%.pdf=%)
-	pdflatex $(@:%.pdf=%.tex)
-	pdflatex $(@:%.pdf=%.tex)
+main.dvi: main.tex
+	latex $(@:%.dvi=%.tex)
+	bibtex $(@:%.dvi=%)
+	latex $(@:%.dvi=%.tex)
+	latex $(@:%.dvi=%.tex)
+	dvips -t a4 -o main.ps main.dvi
+	ps2pdf main.ps
+
+
 
 clean:
 	@rm -vf *.aux *.glo *.gls *.glg *.out *.brf *.ist *.backup
@@ -21,11 +25,5 @@ clean:
 	@find . -name "*~" -exec rm -fv {} \;
 	@find . -name "*.aux" -exec rm -fv {} \;
 
-deepclean:
-	@rm -vf *.aux *.glo *.gls *.glg *.dvi *.ps *.out *.brf *.ist *.spl
-	@rm -vf index.pdf main.pdf
-	@rm -fr submit
-	@rm -vf *.lo[gtfa] *.toc *.idx *.inc *.ilg *.ind *.bbl *.blg *.backup
-	@find . -name "*.bak" -exec rm -fv {} \;
-	@find . -name "*~" -exec rm -fv {} \;
-	@find . -name "*.aux" -exec rm -fv {} \;
+deepclean: clean
+	@rm -vf main.dvi main.ps
