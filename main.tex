@@ -105,7 +105,7 @@ fluidos (\emph{two-fluids}), cada fluido \'e descrito atrav\'es de um
 conjunto de equa\c c\~oes de governo. Em geral, cada fluido tem seus
 pr\'oprios campos de velocidade e press\~ao e uma rela\c c\~ao
 matem\'atica \'e estabelecida para o acoplamento das fases. Para o
-modelo de um fluid (one-fluid), as equa\c c\~oes que modelam o
+modelo de um fluido (one-fluid), as equa\c c\~oes que modelam o
 fen\^omeno f\'isico são as mesmas que modelam escoamentos monof\'asico,
 por\'em o termo de tens\~ao superficial \'e acrescentado ao lado direto
 da equa\c c\~ao de conserva\c c\~ao de quantidade de movimento
@@ -263,7 +263,7 @@ multif\'asico incompress\'iviel chega a:
 
 \noindent nas equa\c c\~oes adimensionais apresentadas acima, os
 n\'umero de \emph{Reynolds} ($Re$) representa a
-raz\~ao das for\c cas inercial e viscosa, o n\'umero de \emph{Weber}
+raz\~ao das for\c cas inercial e viscosa, o n\'umero de \emph{Froude}
 ($Fr$) representa a raz\~ao das for\c cas inercial e gravitacional e,
 finalmente, o n\'umero de \emph{Weber} ($We$) representa a raz\~ao das
 for\c cas inercial e de tens\~ao superficial.
@@ -276,7 +276,7 @@ adimensionaliza\c c\~ao diferente deve ser usado no lugar. Como exemplo pode
 se citar o caso de uma bolha de g\'as em ascens\~ao em uma coluna de
 l\'iquido im\'ovel. Neste sistema, o campo de velocidades \'e o
 resultado, com isso n\~ao pode ser usado como referencial. Ent\~ao, a
-velocidade $\vvet$ \'e comumente adimensionaliza por $\sqrt{g D}$ e o
+velocidade $\vvet$ \'e comumente adimensionalizada por $\sqrt{g D}$ e o
 comprimento caracter\'istico $L$ pelo di\^ametro da bolha $D$.
 Substituindo estes par\^ametros na Eq.~(\ref{eq:qmFinal}), a equa\c c\~ao
 final de conserva\c c\~ao de quantidade de movimento se escreve como:
@@ -314,9 +314,9 @@ explicitamente atrav\'es de objetos computacionais (n\'os, segmentos e
 elementos), ao contr\'ario ela \'e definida atrav\'es de uma fun\c c\~ao de
 identifica\c c\~ao de fases e deslocada atrav\'es de uma equa\c c\~ao
 hiperb\'olica. Devido a sua discretiza\c c\~ao, tal equa\c c\~ao \'e uma fonte
-de difusao num\'erica e deve ser tratada com aten\c c\~ao. Neste tipo de
+de difus\~ao num\'erica e deve ser tratada com aten\c c\~ao. Neste tipo de
 representa\c c\~ao de interface, mudan\c cas topol\'ogicas na interface,
-como coalescencia e ruptura, s\~ao facilmente modeladas. No entanto, a
+como coalesc\^encia e ruptura, s\~ao facilmente modeladas. No entanto, a
 descri\c c\~ao de todas as escalas presentes no problema f\'isico requer um
 n\'umero de pontos computacionais mais elevado.
 
@@ -340,9 +340,9 @@ equa\c c\~ao adicional.
 		\includegraphics[scale=0.32]{interface1.pdf}}
 		\subfloat[]{\label{fig:interface2}
 		\includegraphics[scale=0.32]{interface2.pdf}}
-	\caption{Representa\c c\~ao da inteface em escoamentos bif\'asicos. (a)
+	\caption{Representa\c c\~ao da interface em escoamentos bif\'asicos. (a)
 	Na descri\c c\~ao \emph{Euleriana}, a interface entre os fluidos \'e
-	definda em uma posi\c c\~ao arbitr\'aria em rela\c c\~ao aos elementos.
+	definida em uma posi\c c\~ao arbitr\'aria em rela\c c\~ao aos elementos.
 	Diferentemente, (b) o descri\c c\~ao \emph{Lagrangiana} representa a
 	interface atrav\'es de pontos pertencentes \`a malha computacional
 	atrav\'es da defini\c c\~ao de objectos, tais quais n\'os, segmentos e
@@ -386,7 +386,7 @@ estruturada.
 \end{figure}
 
 Um modelo bidimensional foi desenvolvido por \cite{tomiyama1993} e
-depois extendido a escomanentos tridimensionais \cite{tomiyama1997}. O
+depois extendido a escoamentos tridimensionais \cite{tomiyama1997}. O
 c\'odigo tridimensional incluiu uma nova metodologia baseada no m\'etodo
 de rastreamento de part\'iculas (\emph{particle tracking method} em
 ingl\^es), na qual os efeitos de cada fase s\~ao considerados na outra
@@ -399,12 +399,12 @@ propriedades.
 
 Em \cite{chen1998}, um modelo de escoamento bif\'asico baseado no
 m\'etodo \emph{VOF} foi desenvolvido para simular escoamentos com
-grande diferen\c ca na rela\c c\~ao de desidades. O modelo de for\c ca de
+grande diferen\c ca na rela\c c\~ao de densidades. O modelo de for\c ca de
 superf\'icie cont\'inua (continuum surface force model - CSF  em
 ingl\^es) foi usado para obter-se os efeitos da tens\~ao superficial nas
-equa\c c\~oes de Navier-Stokes. A coalescencia de bolhas e a bolha em
+equa\c c\~oes de Navier-Stokes. A coalesc\^encia de bolhas e a bolha em
 ascen\c c\~ao foram investigadas para valida\c c\~ao do c\'odigo num\'erico com
-dados de literatura disponívies. O m\'etodo proposto apresentou boa
+dados de literatura dispon\'ivies. O m\'etodo proposto apresentou boa
 concord\^ancia com dados experimentais. 
 
 Um modelo de escoamento bif\'asico bidimensional foi apresentado em 
@@ -418,9 +418,9 @@ est\'aticos e din\^amicos, como a bolha em ascens\~ao, encontrando-se
 boas compara\c c\~oes a resultados experimentais.
 
 Em \cite{wu1998} foi desenvolvido um modelo bidimensional e
-axissim\'etrico utilizando os m\'etodo de elementos finitos para
-simula\c c\~ao de escolamentos bif\'asicos atrav\'es do m\'etodo \emph{VOF}.
-Um modelo modificad da for\c ca de superf\'icie cont\'inua (\emph{CSF}
+axisim\'etrico utilizando os m\'etodo de elementos finitos para
+simula\c c\~ao de escoamentos bif\'asicos atrav\'es do m\'etodo \emph{VOF}.
+Um modelo modificado da for\c ca de superf\'icie cont\'inua (\emph{CSF})
 foi proposto para tratar o termo de tens\~ao superficial nas equa\c
 c\~oes de Navier-Stokes. Tal modelo contorna as dificuldades na
 aproxima\c c\~ao da curvatura da interface e, com isso, facilita seu
@@ -438,7 +438,7 @@ para modelagem de escoamentos bif\'asicos. Neste m\'etodo a interface
 movimentada pelo campo de velocidades. A curvatura e os vetores normais
 \`a interface s\~ao convenientemente calculados com a ajuda da mesma
 fun\c c\~ao dist\^ancia, com isso uma modelagem direta da tens\~ao
-superficial \'e realizada com sucesso. Apesas de sua recente apari\c
+superficial \'e realizada com sucesso. Apesar de sua recente apari\c
 c\~ao nos modelos de escoamento bif\'asico, o m\'etodo de Level-Set
 provou-se ser um dos mais importantes modelos de din\^amicas
 interfaciais. Figura~(\ref{fig:ls}) mostra a representa\c c\~ao das
@@ -470,15 +470,15 @@ representam a interface quando o valor coincide com zero.
 	\label{fig:ls} 
 \end{figure}
 
-O m\'etodo de Level-SEt em escoamentos bif\'asicos foi primeiramente
+O m\'etodo de Level-Set em escoamentos bif\'asicos foi primeiramente
 desenvolvido por  \cite{sussman1994} e seguido por muitos outros
-autores. Eles propuseram um esquema de segunda ordem baseado em
-upwind/proje\c c\~ao para o c\'alculo da solu\c c\~ao das equa\c c\~oes
-de Navier-Stokes para fluidos imisc\'iveis. Foi mostrado que a
-conserva\c c\~ao de mass \'e apenas garantida se a fun\c c\~ao de
-Level-Set \'e reinicializada preferenciamente em todo passo de tempo.
+autores. Eles propuseram um esquema de segunda ordem baseado em um
+esquema \emph{upwind}/proje\c c\~ao para o c\'alculo da solu\c c\~ao das
+equa\c c\~oes de Navier-Stokes para fluidos imisc\'iveis. Foi mostrado
+que a conserva\c c\~ao de mass \'e apenas garantida se a fun\c c\~ao de
+Level-Set \'e reinicializada preferencialmente em todo passo de tempo.
 Eles realizaram significativos testes com bolhas e gotas para valida\c
-c\~ao desta nova metodologia. Adicionalemente, \cite{sussman1997}
+c\~ao desta nova metodologia. Adicionalmente, \cite{sussman1997}
 apresentaram sua vers\~ao extendida para o caso tridimensional de
 superf\'icie livre. Novamente, testes foram realizados com sucesso para
 valida\c c\~ao desta nova extens\~ao atrav\'es de importantes casos,
@@ -497,7 +497,7 @@ Uma formula\c c\~ao de elementos finitos estabilizada e acoplada ao
 m\'etodo de Level-Set foi desenvolvida para o c\'alculo da din\^amica de
 bolhas em \cite{nagrath2005}. Um m\'etodo tipo Petrov-Galerkin foi
 tamb\'em utilizado para discretizar as equa\c c\~oes de conserva\c c\~ao
-de quantidade de movimento. Coalescencia e ascen\c c\~ao  de bolhas
+de quantidade de movimento. Coalesc\^encia e ascens\~ao  de bolhas
 foram estudadas e comparadas com a metodologia proposta.
 
 Um m\'etodo num\'erico foi proposto em \cite{marchandise2006} para a
@@ -516,7 +516,7 @@ difus\~ao num\'erica, com isso a reinicializa\c c\~ao da fun\c c\~ao de
 Level-Set se faz obrigat\'oria em todo o passo tempo. Uma outra
 alternativa, adotada por muitos autores, \'e o acoplamento do m\'etodo
 de Level-Set com o m\'etodo VOF, formando CLSVOF (\emph{coupled
-Level-Set Volume-of-Fluid em ingl\^es}). Esta nova metodologia (ver
+Level-Set Volume-of-Fluid} em ingl\^es). Esta nova metodologia (ver
 \cite{bourlioux1995}, \cite{sussman2000} and \cite{nichita2010a}) utiliza
 as principais caracter\'isticas de cada m\'etodo separado, com isso a
 curvatura e os vetores normais s\~ao  calculados atrav\'es da fun\c c\~ao de
@@ -535,16 +535,16 @@ atrav\'es de elementos computacionais. Tal descri\c c\~ao \'e conhecida como
 rastreamento de interface (\emph{interface tracking} no ingl\^es).
 Dentro desta classe de m\'etodos, \emph{volume-tracking} e
 \emph{front-tracking} s\~ao os que mais se destacam na literatura. O
-primeiro utiliza particulas marcadoras para reconstru\c c\~ao da interface,
+primeiro utiliza part\'iculas marcadoras para reconstru\c c\~ao da interface,
 combinando precis\~ao e rigor com relativamente baixo custo de
 investimento (\cite{harlow1965},\cite{amsden1970}). O segundo,
 primeiramente implementado por \cite{glimm1988}, representa a interface
 atrav\'es de um conjunto de n\'os interconectados que se movem de acordo
 com o escoamento calculado no referencial \emph{Euleriano}. Tal
 descri\c c\~ao fornece uma representa\c c\~ao definida da interface com alta
-precis\~ao, entretanto sua desvantagem est\'a na necessiade de um
+precis\~ao, entretanto sua desvantagem est\'a na necessidade de um
 tratamento explicito quando a interface apresenta mudan\c cas
-topol\'oligas, como no caso de coalescence e ruptura de interface.
+topol\'ogicas, como no caso de coalesc\^encia e ruptura de interface.
 
 Em \cite{unverdi1992}, uma nova metodologia para simula\c c\~ao de
 escoamentos multif\'asicos foi descrita. As equa\c c\~oes foram
@@ -558,7 +558,7 @@ foram calculados a partir de fun\c c\~oes trigonom\'etricas em cada
 elemento da superf\'icie e a curvatura foi calculada atrav\'es de uma
 aproxima\c c\~ao da indicatrix \emph{Dupin} na superf\'icie. Por apresentar
 uma descri\c c\~ao explicita da interface, tal metodologia definiu com
-precis\~ao a superf\'icie que separa os fluids, entretanto as
+precis\~ao a superf\'icie que separa os fluidos, entretanto as
 propriedades dos fluidos n\~ao foram precisamente definidas,
 necessitando ent\~ao de um tratamento num\'erico especial.  
 
@@ -592,7 +592,7 @@ malha din\^amica para simula\c c\~ao de escoamentos tipo superf\'icie livre
 e bif\'asicos (\cite{perot2003},\cite{quan2006}), no qual difere da
 abordagem de malha fixa. Neste caso, a discretiza\c c\~ao das equa\c c\~oes
 de governo foi feita sobre uma malha n\~ao estruturada com o aux\'ilio
-de um m\'etodo de passo fracional exato. Tal t\'ecnica melhora a
+de um m\'etodo de passo fracion\'ario exato. Tal t\'ecnica melhora a
 defini\c c\~ao da interface, uma vez que o salto de propriedades f\'isicas
 \'e mantido definido. A valida\c c\~ao da metodologia foi realizada com
 sucesso atrav\'es de v\'arios testes num\'ericos comparativos, mostrando
@@ -607,7 +607,7 @@ m\'etodo tamb\'em permite uma representa\c c\~ao precisa da interface, uma
 vez que esta \'e definida atrav\'es de elementos computacionais e
 pertencentes a malha do dom\'inio. V\'arios testes e valida\c c\~oes
 foram apresentados, mostrando que a metodologia descreve com precis\~ao
-escomanetos bif\'asicos.
+escoamentos bif\'asicos.
 
 \subsection{Abordagem emp\'irica ou experimental}
 
@@ -635,8 +635,8 @@ Quando o escoamento \'e adiab\'atico, ou seja n\~ao h\'a transfer\^encia
 de calor, se torna necess\'ario a medida de vaz\~ao m\'assica para cada
 fase, com isso o t\'itulo de vapor \'e determinada para todo o tubo. Se
 o tubo \'e aquecido e fluxos de massa s\~ao notados no sistema, o
-t\'itulo de vapor aumentar\'a na dire\c c\~ao do escomaento. No
-entando, para o caso de resfriamento do tubo e, consequentemente, a
+t\'itulo de vapor aumentar\'a na dire\c c\~ao do escoamento. No
+entanto, para o caso de resfriamento do tubo e, consequentemente, a
 condensa\c c\~ao do vapor, o t\'itulo de vapor diminuir\'a na dire\c
 c\~ao do escoamento.
 
@@ -696,7 +696,7 @@ transversal e volum\'etrica.
 
 A fra\c c\~ao de vazios local $\epsilon_{local}$ \'e tipicamente medida
 atrav\'es de um feixe radioativo brilhante que atravessa o tubo onde o
-escoamento multif\'asico est\'a localizado. Atrav\'es da absorv\c c\~ao de
+escoamento multif\'asico est\'a localizado. Atrav\'es da absor\c c\~ao de
 luz neste feixe no outro lado do tubo, \'e poss\'ivel medir o
 comprimento da fase gasosa. A vaz\~ao de vazios local \'e ent\~ao
 determinada por: 
@@ -718,14 +718,14 @@ como:
 	\epsilon_{trans} = \frac{A_G}{A_G+A_L}
 \end{equation}
 
-\noindent onde $A_G$ \'e a area ocupada da fase gasosa e $L_L$
+\noindent onde $A_G$ \'e a \'area ocupada da fase gasosa e $L_L$
 da fase l\'iquida.
 
 A fra\c c\~ao de vazios volum\'etrica $\epsilon_{vol}$ \'e medida geralmente
 atrav\'es de mecanismos de armadilha para os fluidos, onde por um
 instante breve a amostra fica armazenada, possibilitando a medida da
-quantidade de gas e l\'iquido diretamente. Esta fra\c c\~ao \'e ent\~ao
-definda como:
+quantidade de g\'as e l\'iquido diretamente. Esta fra\c c\~ao \'e ent\~ao
+definida como:
 
 \begin{equation}
 	\epsilon_{vol} = \frac{V_G}{V_G+V_L}
@@ -744,19 +744,19 @@ depende da sua aplica\c c\~ao.
 
 \begin{figure}[h!]
 	\begin{center}
-		\subfloat[bolhas (\emph{bubbly})]
+		\subfloat[Bolhas (\emph{Bubbly})]
 		{\includegraphics[angle=00, scale=0.3]{v_bubbly.pdf}
 		\hspace{0.4cm}}
-		\subfloat[golfada (\emph{slug})]
+		\subfloat[Golfada (\emph{Slug})]
 		{\includegraphics[angle=00, scale=0.3]{v_slug.pdf}
 		\hspace{0.4cm}}
-		\subfloat[batido (\emph{churn})]
+		\subfloat[Batido (\emph{Churn})]
 		{\includegraphics[angle=00, scale=0.3]{v_churn.pdf}
 		\hspace{0.4cm}}
-		\subfloat[pouco-anular (\emph{wispy-annular})]
+		\subfloat[Pouco anular (\emph{Wispy-annular})]
 		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.pdf}
 		\hspace{0.4cm}}
-		\subfloat[anular (\emph{annular})]
+		\subfloat[Anular (\emph{Annular})]
 		{\includegraphics[angle=00, scale=0.3]{v_annular.pdf}}
 	\end{center}
 	\caption{}
@@ -765,7 +765,7 @@ depende da sua aplica\c c\~ao.
 
 \begin{itemize}
 	\item Bolhas dispersas ou \emph{Bubbly}: no escoamento em
-	bolhas, o gas ou a fase vapor est\'a distribuida na fase cont\'inua
+	bolhas, o g\'as ou a fase vapor est\'a distribu\'ida na fase cont\'inua
 	l\'iquida como um aglomerado de bolhas. Em uma situa\c c\~ao extrema,
 	estas bolhas podem apresentar formato esf\'erico e de pequeno
 	di\^ametro ou apresentar formato de corpo alongado com a uma das
@@ -776,20 +776,20 @@ depende da sua aplica\c c\~ao.
 	\item Golfadas ou \emph{Slug}: neste tipo de escoamento, as
 	bolhas apresentam aproximadamente o mesmo di\^ametro do tubo, com
 	isso os efeitos de parede s\~ao mais evidentes. O nariz da bolha tem
-	um formato caracter\'istico arrendodado devido \`a press\~ao e ao
+	um formato caracter\'istico arredondado devido \`a press\~ao e ao
 	escoamento, enquanto que as laterais s\~ao separadas por um filme
-	l\`iquido que vai suavemente diminuido at\'e chegar \`a parte de
+	l\`iquido que vai suavemente diminuindo at\'e chegar \`a parte de
 	tr\'as da bolha. O termo \emph{slug} representa o l\'iquido que
 	separa sucessivas bolhas de g\'as ou vapor. Dependendo do
 	escoamento, pequenas bolhas podem ou n\~ao estar presentes entre as
 	bolhas principais.
 	\item Batido ou \emph{Churn flow}: a interface de largas bolhas 
 	de g\'as ou vapor se quebra, formando o escoamento do tipo golfadas
-	em uma distribui\c c\~ao ca\'otica. Nele, a fase l\'iquida \'e impurrada
+	em uma distribui\c c\~ao ca\'otica. Nele, a fase l\'iquida \'e empurrada
 	em dire\c c\~ao \`as paredes do canal. Este escoamento tamb\'em \'e
 	conhecido como semi-anular ou golfada-anular, devido ao car\'arter
 	transit\'orio deste padr\~ao.
-	\item Pouco-anular ou \emph{Wispy-annular flow}: o filme l\'iquido
+	\item Pouco anular ou \emph{Wispy-annular flow}: o filme l\'iquido
 	apresenta grande espessura nas paredes do tubo com uma
 	consider\'avel quantidade de l\'iquido arrastada para dentro do
 	n\'ucleo de g\'as ou vapor. Este tipo de padr\~ao de escoamento foi
@@ -817,19 +817,19 @@ tubulares horizontais e inclinados s\~ao complexos devido \`a sua
 natureza n\~ao sim\'etrica causada pelo influ\^encia do campo
 gravitacional. Entretanto s\~ao bem considerados at\'e hoje os padr\~oes
 multif\'asicos sugeridos por \cite{alves1954} e apresentados
-esquematicamentes na Fig.~(\ref{fig:horizontal}). 
+de forma esquem\'atica na Fig.~(\ref{fig:horizontal}). 
 
 \begin{figure}[h!]
 	\begin{center}
 		\subfloat[Bolhas dispersas (\emph{Bubbly})]
 		{\includegraphics[angle=00, scale=0.3]{h_bubbly.pdf}}\\
-		\subfloat[Bolhas (\emph{plug})]
+		\subfloat[Bolhas (\emph{Plug})]
 		{\includegraphics[angle=00, scale=0.3]{h_plug.pdf}}\\
 		\subfloat[Golfadas (\emph{Slug})]
 		{\includegraphics[angle=00, scale=0.3]{h_slug.pdf}}\\
 		\subfloat[Estratificado (\emph{Stratified})]
 		{\includegraphics[angle=00, scale=0.3]{h_stratified.pdf}}\\
-		\subfloat[Estratificado Ondulado (\emph{Wavy})]
+		\subfloat[Estratificado ondulado (\emph{Wavy})]
 		{\includegraphics[angle=00, scale=0.3]{h_wavy.pdf}}\\
 		\subfloat[Anular (\emph{Annular})]
 		{\includegraphics[angle=00, scale=0.3]{h_annular.pdf}}
@@ -842,17 +842,17 @@ esquematicamentes na Fig.~(\ref{fig:horizontal}).
 	\item Bolhas dispersas ou \emph{Bubbly}: este escoamento \'e
 	similar ao apresentado anteriormente para escoamento vertical, com a
 	diferen\c ca que as bolhas de g\`as ou vapor tendem a se movimentar
-	na metada superior do tubo. Fato justificado pela menor densidade da
+	na metade superior do tubo. Fato justificado pela menor densidade da
 	bolha comparada ao l\'iquido. Em uma velocidade moderada de ambas as
 	fases presente no escoamento, a distribui\c c\~ao de bolhas \'e uniforme
 	ao longo do tubo, enquanto que para velocidades mais elevadas o
 	padr\~ao de escoamento se assemelha ao \emph{Wispy-annular}.
 	\item Bolhas \emph{Plug}: escoamento similar ao do tipo golfadas em
 	tubos verticais. Como no caso de bolhas dispersas, a bolhas de g\'as
-	ou vapor tendem a atravessar o tubo na metada superior, devido ao
+	ou vapor tendem a atravessar o tubo na metade superior, devido ao
 	campo gravitacional.
 	\item Estratificado ou \emph{Stratified}: escoamento separado por
-	uma interface suave, onde geralemente \'e encontrado em baixas
+	uma interface suave, onde geralmente \'e encontrado em baixas
 	velocidades das fases l\'iquida e gasosa.
 	\item Estratificado ondulado ou \emph{Wavy}: as ondas s\~ao formadas
 	quando a velocidade na fase gasosa \'e aumentada. Estas ondas se
@@ -864,7 +864,7 @@ esquematicamentes na Fig.~(\ref{fig:horizontal}).
 	l\'iquido.
 	\item Anular ou \emph{Annular}: a vaz\~ao da fase gasosa \'e t\~ao
 	alta que \'e capaz de sustentar a fase l\'iquida pr\'oxima \`a
-	parade do tubo, originando um n\'ucleo de g\'as ou vapor. Em sua
+	parede do tubo, originando um n\'ucleo de g\'as ou vapor. Em sua
 	se\c c\~ao transversal, o l\'iquido pode n\~ao ser cont\'inuo ao redor
 	de toda a circunfer\^ncia, po\'em ser\'a mais espessa na base do
 	tubo.
@@ -876,7 +876,7 @@ identifica\c c\~ao do tipo de escoamento (golfadas, anular, estratificado
 etc.) atrav\'es de par\^ametros conhecidos como vaz\~ao m\'assica,
 fra\c c\~ao de vazios, qualidade de vapor etc. Estes mapas existem para
 diferentes tipos de fluidos, dimens\~ao de tubos, graus de mistura e
-muitos outros. Basicamente, eles podem ser dividos em duas classes:
+muitos outros. Basicamente, eles podem ser divididos em duas classes:
 adiab\'aticos e diab\'aticos. O primeiro \'e usualmente utilizado para
 escoamentos do tipo ar/\'agua, enquanto o segundo pode ser encontrado em
 refrigerantes em evapora\c c\~ao. 
