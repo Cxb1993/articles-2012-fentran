@@ -34,7 +34,6 @@
 \newcommand{\rot}{\,\mathbf{rot}\,}
 \newcommand{\uvet}{\mathbf{u}}
 \newcommand{\vvet}{\mathbf{v}}
-\newcommand{\cvet}{\mathbf{c}}
 \newcommand{\wvet}{\mathbf{w}}
 \newcommand{\xvet}{\mathbf{x}}
 \newcommand{\gvet}{\mathbf{g}}
@@ -58,7 +57,7 @@ ajudar o leitor a encontrar as principais refer\^encias e nomes de
 autores que desenvolveram metodologias para a investiga\c c\~ao deste
 importante fen\^omeno.
 
-\subsection{Introdu\c c\~ao}
+\section{Introdu\c c\~ao}
 
 Os escoamentos bif\'asicos s\~ao encontrados abundantemente na natureza.
 A presen\c ca de fluidos que n\~ao se misturam pode ser notada em todo
@@ -89,17 +88,18 @@ contamina\c c\~ao dos fluidos. O segundo exemplo
 ou a\c c\~ao capilar, que \'e a capacidade do fluido de vencer os
 efeitos gravitacionais e subir sobre as paredes dos tubos. Um exemplo
 pode ser facilmente notado em um copo de \'agua onde se verifica um
-abaulamento do l\'iquido junto \`a superf\'icie do copo. No terceiro 
-(Fig.~(\ref{fig:surfTension}c) e quarto (Fig.~(\ref{fig:surfTension}d)
-exemplos s\~ao ilustradas duas gotas em repouso. Na figura pode-se
-observar que o contato do l\'iquido com uma superf\'icie s\'olida pode
-variar a forma da gota. Esta diferen\c ca de forma \'e atribuida ao tipo
-de superf\'ice em contato com o fluido. As superf\'icies hidrof\'ilicas
-tendem a permitir um espalhamento do l\'iquido enquanto que as
-superf\'icies hidrof\'obicas fazem com que a gota se mantenha
-concentrada na superf\'icie. Num caso extremo, conhecido como
-superf\'icies super hidrof\'obicas, a \'area da gota em contato com a
-superf\'icie \'e m\'inima, mantendo a gota em sua forma esf\'erica. 
+abaulamento do l\'iquido junto \`a superf\'icie do copo. No terceiro
+exemplo (Fig.~(\ref{fig:surfTension}c)) e no quarto exemplo
+(Fig.~(\ref{fig:surfTension}d)) s\~ao ilustradas duas gotas em repouso. Na
+figura pode-se observar que o contato do l\'iquido com uma superf\'icie
+s\'olida pode variar a forma da gota. Esta diferen\c ca de forma \'e
+atribuida ao tipo de superf\'ice em contato com o fluido. As
+superf\'icies hidrof\'ilicas tendem a permitir um espalhamento do
+l\'iquido enquanto que as superf\'icies hidrof\'obicas fazem com que a
+gota se mantenha concentrada na superf\'icie. Num caso extremo,
+conhecido como superf\'icies super hidrof\'obicas, a \'area da gota em
+contato com a superf\'icie \'e m\'inima, mantendo a gota em sua forma
+esf\'erica. 
 
 
 \begin{figure}[h!]
@@ -152,7 +152,7 @@ principais t\'ecnicas utilizadas por estes pesquisadores para
 compreender este fascinante fen\^omeno, com \^enfase em uma revis\~ao
 bibliogr\'afica de simula\c c\~oes num\'ericas e experimentais.
 
-\subsection{Equa\c c\~oes de Governo}
+\section{Equa\c c\~oes de Governo}
 
 Na literatura s\~ao encontrados dois tipos de modelos matem\'aticos para
 escoamentos bif\'asicos: um fluido e dois fluidos. No modelo de dois
@@ -193,7 +193,7 @@ massa \'e apresentada como:
 \label{eq:cmFinal}
 \end{equation}
 
-Aqui, $\vvet$ representa o vetor de velocidades que para o caso
+\noindent aqui, $\vvet$ representa o vetor de velocidades que para o caso
 bidimensional contem as componentes $x$ e $y$ e no caso tridimensional
 $x$, $y$ e $z$. Como mencionado anteriormente, a equa\c c\~ao de
 conseva\c c\~ao
@@ -264,8 +264,8 @@ adimensionais:
 	&=
 	Lx^* & \qquad \gvet
 	&=
-	g_{\infty} \gvet^* & \qquad \cvet
-	&= U \cvet^*
+	g_{\infty} \gvet^*  & \qquad \sigma
+	&= \sigma_0 \sigma^*	
 	\nonumber
 	\\
 	\mu
@@ -285,8 +285,7 @@ adimensionais:
 	&=
 	\frac{U}{L}\frac{\partial}{\partial t^*} & \qquad \nabla
 	&=
-	\frac{1}{L}\nabla^* & \qquad \sigma
-	&= \sigma_0 \sigma^* 
+	\frac{1}{L}\nabla^* 
 	\nonumber
 \end{align}\vspace{0.0cm}
 
@@ -309,7 +308,7 @@ multif\'asico incompress\'iviel chega a:
 	=
 	-\nabla p + \frac{1}{Re}
 	\nabla \cdot [\mu (\nabla \vvet + \nabla \vvet^{T})] +
-	\frac{1}{Fr^2} \gvet
+	\frac{1}{Fr^2} \gvet +
 	\frac{1}{We} \fvet_{s}
 	\label{eq:momentumAdimenFinal}
 \end{equation}\vspace{0.0cm}
@@ -351,7 +350,7 @@ raz\~ao das for\c cas inercial e gravitacional, enquanto que o n\'umero
 de \emph{E\"otv\"os} number $(Eo)$ representa a raz\~ao das for\c cas de
 gravidade e tens\~ao superficial.
 
-\subsection{Abordagem Num\'erica}
+\section{Abordagem Num\'erica}
 
 Em escoamentos bif\'asicos, ou \emph{two-phase flows} em ingl\^es, a
 modelagem discreta da interface \'e o par\^ametro mais importante para
@@ -662,7 +661,7 @@ pertencentes a malha do dom\'inio. V\'arios testes e valida\c c\~oes
 foram apresentados, mostrando que a metodologia descreve com precis\~ao
 escoamentos bif\'asicos.
 
-\subsection{Abordagem emp\'irica ou experimental}
+\section{Abordagem emp\'irica ou experimental}
 
 Para iniciarmos a introdu\c c\~ao \`as t\'ecnias experimentais, passamos
 pela defini\c c\~ao de importantes par\^ametros utilizados na
@@ -1020,7 +1019,7 @@ superficiais ($G_f$ e $G_g$).
 	\label{fig:map} 
 \end{figure}
 
-\subsection{Exerc\'icios}
+\section{Problemas}
 
 1) Descreva a diferen\c ca entre referencial \emph{Euleriano} e
 \emph{Lagrangiano}.
