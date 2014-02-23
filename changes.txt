@@ -1,0 +1,6 @@
+
+- remoção de termos em inglês para contribuir à quebra de fluência do
+  texto, isto inclui, principalmente, os termos entre parênteses;
+- substituicao das letras maíusculas por minúsculas para adjetivos
+  oriundos de nomes próprios: Ex.: lagrangiano e euleriano.
+- revisão completa do texto do capítulo 19.
