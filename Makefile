@@ -17,8 +17,6 @@ main.dvi: main.tex
 	ps2pdf $*.ps
 	@rm -fr $*.ps $*.dvi
 
-
-
 clean:
 	@rm -vf *.aux *.glo *.gls *.glg *.out *.brf *.ist *.backup
 	@rm -vf *.lo[gtfa] *.toc *.idx *.inc *.ilg *.ind *.bbl *.blg
