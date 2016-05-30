@@ -52,9 +52,9 @@
 
 \noindent Gustavo Anjos \\
 \noindent
-\textsl{Nuclear Science and Engineering
+\textsl{Departamento de Engenharia Mecânica
 \\
-\noindent MIT -- Massachusetts Institute of Technology}
+\noindent UERJ -- Universidade do Estado do Rio de Janeiro}
 \\
 
 A proposta deste cap\'itulo \'e dar ao leitor uma vis\~ao geral dos
@@ -267,17 +267,17 @@ adimensionais:
 \begin{align}
 	\rho
 	&=
-	\rho_{\infty} \rho^* & x
+	\rho_0 \rho^* & x
 	&=
 	Lx^* & \qquad \gvet
 	&=
-	g_{\infty} \gvet^*  & \qquad \sigma
+	g_0 \gvet^*  & \qquad \sigma
 	&= \sigma_0 \sigma^*	
 	\nonumber
 	\\
 	\mu
 	&=
-	\mu_{\infty} \mu^* & \vvet
+	\mu_0 \mu^* & \vvet
 	&=
 	U \vvet^* & \qquad t
 	&=
@@ -288,7 +288,7 @@ adimensionais:
 	\\
 	p
 	&=
-	\rho_{\infty} U^2 p^* & \frac{\partial}{\partial t}
+	\rho_0 U^2 p^* & \frac{\partial}{\partial t}
 	&=
 	\frac{U}{L}\frac{\partial}{\partial t^*} & \qquad \nabla
 	&=
@@ -321,11 +321,12 @@ chega a:
 \end{equation}\vspace{0.0cm}
 
 \noindent nas equa\c c\~oes adimensionais apresentadas acima, os
-n\'umeros de \emph{Reynolds} ($Re$) representa a
-raz\~ao das for\c cas inercial e viscosa, o n\'umero de \emph{Froude}
-($Fr$) representa a raz\~ao das for\c cas inercial e gravitacional e,
-finalmente, o n\'umero de \emph{Weber} ($We$) representa a raz\~ao das
-for\c cas inercial e de tens\~ao superficial.
+n\'umeros de \emph{Reynolds} ($Re=\rho_0 U L/\mu$) representa a raz\~ao
+das for\c cas inercial e viscosa, o n\'umero de \emph{Froude}
+($Fr=U/\sqrt{g_0 L}$) representa a raz\~ao das for\c cas inercial e
+gravitacional e, finalmente, o n\'umero de \emph{Weber} ($We=\rho_0 U^2
+L/\sigma_0$) representa a raz\~ao das for\c cas inercial e de tens\~ao
+superficial.
 
 A adimensionaliza\c c\~ao das equa\c c\~oes de governo apresentadas
 consideram que a velocidade do escoamento \'e um par\^ametro conhecido.
@@ -335,7 +336,7 @@ de adimensionaliza\c c\~ao diferente deve ser usado no lugar. Como
 exemplo pode se citar o caso de uma bolha de g\'as em ascens\~ao em uma
 coluna de l\'iquido im\'ovel. Neste sistema, o campo de velocidades \'e
 o resultado, com isso n\~ao pode ser usado como referencial. Ent\~ao, a
-velocidade $\vvet$ \'e comumente adimensionalizada por $\sqrt{g D}$ e o
+velocidade $\vvet$ \'e comumente adimensionalizada por $\sqrt{g_0 D}$ e o
 comprimento caracter\'istico $L$ pelo di\^ametro da bolha $D$.
 Substituindo estes par\^ametros na Eq.~(\ref{eq:qmFinal}), a equa\c
 c\~ao final de conserva\c c\~ao de quantidade de movimento se escreve
@@ -346,17 +347,21 @@ como:
 	\vvet \cdot \nabla \vvet
 	=
 	-\nabla p + 
-	\frac{1}{N^2}
+	\frac{1}{Ar^2}
 	\nabla\cdot [\mu(\nabla\vvet+\nabla \vvet^{T})] +
 	\gvet +
 	\frac{1}{Eo} \fvet_{s}
 	\label{eq:momentumAdimenFinal2}
 \end{equation}\vspace{0.0cm}
 
-\noindent onde o n\'umero de \emph{Archimedes} ($N$) representa a
-raz\~ao das for\c cas inercial e gravitacional, enquanto que o n\'umero
-de \emph{E\"otv\"os} $(Eo)$ representa a raz\~ao das for\c cas de
-gravidade e tens\~ao superficial.
+\noindent onde o n\'umero de \emph{Archimedes} ($Ar=g_0 L^3
+\rho^2/\mu^2$) representa a raz\~ao das for\c cas inercial e
+gravitacional, enquanto que o n\'umero de \emph{E\"otv\"os} ($Eo=\rho
+g_0 L^2/\sigma_0$) representa a raz\~ao das for\c cas de gravidade e
+tens\~ao superficial. O n\'umero de \emph{Morton} ($Mo=g_0 \mu_0^4
+\rho_0/ \rho_0^2 \sigma_0^3$) \'e tamb\'em utilizado para caracterizar a
+forma de bolhas e gotas em problemas multif\'asicos, apesar de n\~ao
+aparecer explicitamente nas equa\'c\~oes de escoamento.
 
 \section{Abordagem Num\'erica}
 
@@ -973,22 +978,22 @@ algumas refer\^encias cl\'assicas como (\cite{collier1996},
 
 A Fig.~(\ref{fig:map}a) representa um mapa de padr\~oes de escoamento
 para ar/\'agua, em condi\c c\~oes de press\~ao atmosf\'erica, para
-canais verticais (\cite{hewitt1969}). Neste mapa pode-se observar que
-cada padr\~ao de escoamento ocupa uma \'area no gr\'afico e as linhas
-tracejadas delimitam a transi\c c\~ao.  Como pode-se observar tamb\'em,
-estas mesmas linhas n\~ao ocupam todo o limite do gr\'afico, o que
-sugere a falta de dados experimentais para descrever as transi\c c\~oes
-em toda a escala. \'E importante notar que estes mapas devem ser
+canais verticais baseado em (\cite{hewitt1969}). Neste mapa pode-se
+observar que cada padr\~ao de escoamento ocupa uma \'area no gr\'afico e
+as linhas tracejadas delimitam a transi\c c\~ao.  Como pode-se observar
+tamb\'em, estas mesmas linhas n\~ao ocupam todo o limite do gr\'afico, o
+que sugere a falta de dados experimentais para descrever as transi\c
+c\~oes em toda a escala. \'E importante notar que estes mapas devem ser
 observados n\~ao mais do que um guia grosseiro de padr\~oes de
 escoamentos, pois os fluxos de quantidade de movimento por si s\'o n\~ao
 s\~ao capazes de representar com exatid\~ao a influ\^encia das
 propriedades f\'isicas do fluido nem o di\^ametro do tubo.
 
 A Fig.~(\ref{fig:map}b) descreve um outro mapa de padr\~oes, por\'em
-para escoamento horizontal (\cite{baker1954}). Este mapa \'e largamente
-utilizado na ind\'ustria petroqu\'imica. No mapa pode-se identificar os
-padr\~oes de escoamento em diferentes velocidades m\'assicas
-superficiais ($G_f$ e $G_g$). 
+para escoamento horizontal baseado em (\cite{baker1954}). Este mapa \'e
+largamente utilizado na ind\'ustria petroqu\'imica. No mapa pode-se
+identificar os padr\~oes de escoamento em diferentes velocidades
+m\'assicas superficiais de l\'iquido $G_L$ e de g\'as $G_G$. 
 
 \begin{figure}[ht!]
 	\subfloat[]
@@ -997,11 +1002,12 @@ superficiais ($G_f$ e $G_g$).
 	\subfloat[]
 	{\includegraphics[scale=0.27,angle=1]{baker1954.eps}}
 	\caption[Mapas de padr\~oes de escoamento bif\'asico.]{Mapas de
-	 padr\~oes de escoamento bif\'asico. As linhas cont\'inuas e
-	 tracejadas representam a transi\c c\~ao dos padr\~oes de
-	 escoamento. (a) Escoamento vertical para ar/\'agua
-	 (\cite{hewitt1969}). (b) Escoamento horizontal para ar/\'agua
-	 (\cite{baker1954}).}
+	padr\~oes de escoamento bif\'asico representado por fluxo de massa
+	$G$ de l\'iquido $G_L$ e de g\'as $G_G$. As linhas cont\'inuas e
+	tracejadas representam a transi\c c\~ao dos padr\~oes de escoamento.
+	(a) Escoamento vertical para ar/\'agua baseado em
+	(\cite{hewitt1969}). (b) Escoamento horizontal para ar/\'agua
+	baseado em (\cite{baker1954}).}
 	\label{fig:map} 
 \end{figure}
 
