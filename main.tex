@@ -54,7 +54,9 @@
 \noindent
 \textsl{Departamento de Engenharia Mecânica
 \\
-\noindent UERJ -- Universidade do Estado do Rio de Janeiro}
+Programa de Pós-Graduação em Engenharia Mecânica -- PPG-EM
+\\
+\noindent Universidade do Estado do Rio de Janeiro -- UERJ}
 \\
 
 A proposta deste cap\'itulo \'e dar ao leitor uma vis\~ao geral dos
@@ -112,15 +114,15 @@ esf\'erica.
 \begin{figure}[h!]
 	\begin{center}
 		\subfloat[esfera em repouso]
-		{\includegraphics[angle=00, scale=0.5]{surfTension1.eps}
+		{\includegraphics[angle=00, scale=0.38]{surfTension1.eps}
 		\hspace{0.6cm}}
 		\subfloat[capilaridade]
-		{\includegraphics[angle=00, scale=0.5]{surfTension3.eps}}\\
+		{\includegraphics[angle=00, scale=0.38]{surfTension3.eps}}\\
 		\subfloat[superf\'icie hidrof\'ilica]
-		{\includegraphics[angle=00, scale=0.5]{surfTension2a.eps}
+		{\includegraphics[angle=00, scale=0.38]{surfTension2a.eps}
 		\hspace{0.6cm}}
 		\subfloat[superf\'icie hidrof\'obica]
-		{\includegraphics[angle=00, scale=0.5]{surfTension2b.eps}}
+		{\includegraphics[angle=00, scale=0.38]{surfTension2b.eps}}
 	\end{center}
 	\caption[Exemplos de sistemas bif\'asicos]{Exemplos de sistemas
 	bif\'asicos encontrados na natureza. (a) Esfera em repouso. Neste
@@ -365,13 +367,14 @@ aparecer explicitamente nas equa\'c\~oes de escoamento.
 
 \section{Abordagem Num\'erica}
 
-Em escoamentos bif\'asicos, a
-modelagem discreta da interface \'e o par\^ametro mais importante para
-se obter precis\~ao nos c\'alculos. Encontram-se na literatura duas
-abordagens cl\'assicas para representa\c c\~ao da interface entre dois
-fluidos: \emph{euleriana} e \emph{lagrangiana}. Estas duas abordagens
-est\~ao fortemente ligadas \`a representa\c c\~ao do escoamento. Figura~(\ref{fig:interface}) representa um esquema bidimensional das
-descri\c c\~oes de interface nos dois modos acima citados. 
+Em escoamentos bif\'asicos, a modelagem discreta da interface \'e o
+par\^ametro mais importante para se obter precis\~ao nos c\'alculos.
+Encontram-se na literatura duas abordagens cl\'assicas para representa\c
+c\~ao da interface entre dois fluidos: \emph{euleriana} e
+\emph{lagrangiana}. Estas duas abordagens est\~ao fortemente ligadas \`a
+representa\c c\~ao do escoamento. Figura~(\ref{fig:interface})
+representa um esquema bidimensional das descri\c c\~oes de interface nos
+dois modos acima citados. 
 
 Na descri\c c\~ao \emph{euleriana}, a interface n\~ao \'e representada
 explicitamente, ao contr\'ario ela \'e definida atrav\'es de uma fun\c c\~ao de
@@ -397,9 +400,9 @@ equa\c c\~ao adicional.
 
 \begin{figure}[ht!]
 		\subfloat[]{\label{fig:interface1}
-		\includegraphics[scale=0.32]{interface1.eps}}
+		\includegraphics[scale=0.26]{interface1.eps}}
 		\subfloat[]{\label{fig:interface2}
-		\includegraphics[scale=0.32]{interface2.eps}}
+		\includegraphics[scale=0.26]{interface2.eps}}
 	\caption[Representa\c c\~ao da interface em escoamentos
 	 bif\'asicos.]{Representa\c c\~ao da interface em escoamentos
 	 bif\'asicos. (a) Na descri\c c\~ao \emph{euleriana}, a interface
@@ -435,10 +438,11 @@ um esquema bidimensional do m\'etodo \emph{VOF} em uma malha retangular
 estruturada.
 
 \begin{figure}[ht!]
+	\begin{center}
 		\subfloat[]{\label{fig:vof1}
-		\includegraphics[scale=0.45]{vof.eps}}
+		\includegraphics[scale=0.33]{vof.eps}}
 		\subfloat[]{\label{fig:vof2}
-		\includegraphics[scale=0.6]{vofzoom.eps}}
+		\includegraphics[scale=0.37]{vofzoom.eps}}
 		\caption[Representa\c c\~ao da interface no m\'etodo
 		 \emph{VOF}.]{Representa\c c\~ao da interface no m\'etodo
 		 \emph{VOF}. (a) A interface entre os fluidos \'e definida
@@ -446,7 +450,8 @@ estruturada.
 		 computacionais. (b) A fun\c c\~ao \emph{VOF} \'e constru\'ida
 		 considerando-se o volume ocupado por cada fluido em cada
 	     elemento computacional.}
-	\label{fig:vof-interface} 
+		 \label{fig:vof-interface} 
+	\end{center}
 \end{figure}
 
 Um modelo bidimensional foi desenvolvido por \cite{tomiyama1993} e
@@ -516,11 +521,13 @@ representando o que est\'a em uma fase e em outra. As duas fun\c c\~oes
 representam a interface quando o valor coincide com zero. 
 
 \begin{figure}[ht!]
+	\begin{center}
 		\subfloat[]{\label{fig:distance}
-		\includegraphics[scale=0.33]{distance.eps}}
+		\includegraphics[scale=0.27]{distance.eps}}
 		\hspace{0.5cm}
 		\subfloat[]{\label{fig:level-set}
-		\includegraphics[scale=0.33]{level-set.eps}}
+		\includegraphics[scale=0.27]{level-set.eps}}
+	\end{center}
 	\caption[Representa\c c\~ao das fun\c c\~oes dist\^ancia e
 	 Level-Set.]{Representa\c c\~ao das fun\c c\~oes dist\^ancia e
 	 Level-Set. A interface entre os fluidos \'e localizada no meio do
@@ -709,16 +716,16 @@ encontradas, sugerindo tamb\'em o uso de velocidade relativa como base
 para caracteriza\c c\~ao da velocidade do escoamento. A seguir s\~ao
 definidas algumas importantes velocidades encontradas na literatura.
 
-\begin{itemize}
+\begin{enumerate}
 	\item Velocidade m\'edia verdadeira:
-	\'e a velocidade em que cada fase se movimenta no escoamento.
+	\'e a velocidade em que cada fase se movimenta no escoamento;
 	\item Velocidade superficial:
 	tamb\'em conhecida como fluxo volum\'etrico, \'e definida como a
 	raz\~ao do fluxo de velocidade da fase considerada pela \'area
-	transversal total do escoamento multif\'asico.
+	transversal total do escoamento multif\'asico;
 	\item Velocidade de deriva: raz\~ao da
 	velocidade verdadeira m\'edia pela velocidade superficial total.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Fluxo de massa}
 
@@ -768,11 +775,11 @@ A fra\c c\~ao de vazios cordal $\epsilon_{local}$ \'e tipicamente medida
 atrav\'es de um feixe radioativo brilhante que atravessa o tubo onde o
 escoamento multif\'asico est\'a localizado. Atrav\'es da absor\c c\~ao de
 luz deste feixe no outro lado do tubo, \'e poss\'ivel medir o
-comprimento da fase gasosa. A vaz\~ao de vazios cordal \'e ent\~ao
+comprimento da fase gasosa. A vaz\~ao de vazios local \'e ent\~ao
 determinada por: 
 
 \begin{equation}
-	\epsilon_{cordal} = \frac{L_G}{L_G+L_L}
+	\epsilon_{local} = \frac{L_G}{L_G+L_L}
 \end{equation}
 
 \noindent onde $L_G$ \'e o comprimento de linha na fase gasosa e $L_L$
@@ -815,19 +822,19 @@ depende da sua aplica\c c\~ao.
 \begin{figure}[h!]
 	\begin{center}
 		\subfloat[Bolhas]
-		{\includegraphics[angle=00, scale=0.3]{v_bubbly.eps}
-		\hspace{0.8cm}}
+		{\includegraphics[angle=00, scale=0.25]{v_bubbly.eps}
+		\hspace{0.5cm}}
 		\subfloat[Golfada]
-		{\includegraphics[angle=00, scale=0.3]{v_slug.eps}
-		\hspace{0.8cm}}
+		{\includegraphics[angle=00, scale=0.25]{v_slug.eps}
+		\hspace{0.5cm}}
 		\subfloat[Batido]
-		{\includegraphics[angle=00, scale=0.3]{v_churn.eps}
-		\hspace{0.8cm}}
+		{\includegraphics[angle=00, scale=0.25]{v_churn.eps}
+		\hspace{0.5cm}}
 		\subfloat[Pouco anular]
-		{\includegraphics[angle=00, scale=0.3]{v_wispy-annular.eps}
-		\hspace{0.8cm}}
+		{\includegraphics[angle=00, scale=0.25]{v_wispy-annular.eps}
+		\hspace{0.5cm}}
 		\subfloat[Anular]
-		{\includegraphics[angle=00, scale=0.3]{v_annular.eps}}
+		{\includegraphics[angle=00, scale=0.25]{v_annular.eps}}
 	\end{center}
 	\caption[Escoamentos bif\'asicos em tubos verticais.]{Escoamentos
 	 bif\'asicos em tubos verticais. Em todos os casos o escoamento se
@@ -836,7 +843,7 @@ depende da sua aplica\c c\~ao.
 	 alguma estrutura sim\'etrica.} \label{fig:vertical} 
 \end{figure}
 
-\begin{itemize}
+\begin{enumerate}
 	\item Bolhas dispersas: no escoamento em
 	bolhas, o g\'as ou a fase vapor est\'a distribu\'ida na fase cont\'inua
 	l\'iquida como um aglomerado de bolhas. Em uma situa\c c\~ao extrema,
@@ -845,7 +852,7 @@ depende da sua aplica\c c\~ao.
 	extremidades arredondadas. Neste \'ultimo estado, mesmo n\~ao
 	apresentando tamanhos compar\'aveis ao di\^ametro do tubo, o
 	padr\~ao das bolhas pode trazer alguma semelhan\c ca ao escoamento
-	em golfadas.
+	em golfadas;
 	\item Golfadas: neste tipo de escoamento, as
 	bolhas apresentam aproximadamente o mesmo di\^ametro do tubo, com
 	isso os efeitos de parede s\~ao mais evidentes. O nariz da bolha tem
@@ -855,13 +862,13 @@ depende da sua aplica\c c\~ao.
 	tr\'as da bolha. O termo golfadas representa o l\'iquido que
 	separa sucessivas bolhas de g\'as ou vapor. Dependendo do
 	escoamento, pequenas bolhas podem ou n\~ao estar presentes entre as
-	bolhas principais.
+	bolhas principais;
 	\item Batido: a interface de largas bolhas 
 	de g\'as ou vapor se quebra, formando o escoamento do tipo golfadas
 	em uma distribui\c c\~ao ca\'otica. Nele, a fase l\'iquida \'e empurrada
 	em dire\c c\~ao \`as paredes do canal. Este escoamento tamb\'em \'e
 	conhecido como semi-anular ou golfada-anular, devido ao car\'arter
-	transit\'orio deste padr\~ao.
+	transit\'orio deste padr\~ao;
 	\item Pouco anular: o filme l\'iquido
 	apresenta grande espessura nas paredes do tubo com uma
 	consider\'avel quantidade de l\'iquido arrastada para dentro do
@@ -872,7 +879,7 @@ depende da sua aplica\c c\~ao.
 	arrastadas dentro do n\'ucleo de g\'as ou vapor. Este padr\~ao de
 	escoamento \'e encontrado em grandes vaz\~oes m\'assicas e, devido
 	\'a grande quantidade de bolhas no filme l\'iquido, este escoamento
-	pode ser confundido com o escoamento em bolhas. 
+	pode ser confundido com o escoamento em bolhas; 
 	\item anular: um filme l\'iquido \'e formado
 	pr\'oximo \`as paredes do tubo devido ao aparecimento de um n\'uclo
 	cont\'inuo de g\'as ou vapor no meio do tubo. O aparecimento de
@@ -881,7 +888,7 @@ depende da sua aplica\c c\~ao.
 	g\'as ou vapor. Diferentemente do escoamento do tipo
 	pouco anular, as gotas est\~ao separadas ao inv\'es de
 	aglomeradas.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Escoamentos horizontais}
 
@@ -898,20 +905,20 @@ de forma esquem\'atica na Fig.~(\ref{fig:horizontal}).
 % 		{\includegraphics[angle=00, scale=0.3]{v_bubbly.eps}
 % 		\hspace{0.8cm}}
 		\subfloat[Bolhas dispersas]
-		{\includegraphics[angle=00, scale=0.265]{h_bubbly.eps}
+		{\includegraphics[angle=00, scale=0.22]{h_bubbly.eps}
  		\hspace{0.2cm}}
 		\subfloat[Bolhas]
-		{\includegraphics[angle=00, scale=0.265]{h_plug.eps}}\\
+		{\includegraphics[angle=00, scale=0.22]{h_plug.eps}}\\
 		\subfloat[Golfadas]
-		{\includegraphics[angle=00, scale=0.265]{h_slug.eps}
+		{\includegraphics[angle=00, scale=0.22]{h_slug.eps}
  		\hspace{0.2cm}}
 		\subfloat[Estratificado]
-		{\includegraphics[angle=00, scale=0.265]{h_stratified.eps}}\\
+		{\includegraphics[angle=00, scale=0.22]{h_stratified.eps}}\\
 		\subfloat[Estratificado ondulado]
-		{\includegraphics[angle=00, scale=0.265]{h_wavy.eps}
+		{\includegraphics[angle=00, scale=0.22]{h_wavy.eps}
  		\hspace{0.2cm}}
 		\subfloat[Anular]
-		{\includegraphics[angle=00, scale=0.265]{h_annular.eps}}
+		{\includegraphics[angle=00, scale=0.22]{h_annular.eps}}
 	\end{center}
 	\caption[Escoamentos bif\'asicos em tubos horizontais.]{Escoamentos
 	 bif\'asicos em tubos horizontais. Em todos os casos o escoamento se
@@ -923,37 +930,37 @@ de forma esquem\'atica na Fig.~(\ref{fig:horizontal}).
   \label{fig:horizontal} 
 \end{figure}
 
-\begin{itemize}
+\begin{enumerate}
 	\item Bolhas dispersas: este escoamento \'e
 	similar ao apresentado anteriormente para escoamento vertical, com a
-	diferen\c ca que as bolhas de g\`as ou vapor tendem a se movimentar
+	diferen\c ca que as bolhas de g\'as ou vapor tendem a se movimentar
 	na metade superior do tubo. Fato justificado pela menor densidade da
 	bolha comparada ao l\'iquido. Em uma velocidade moderada de ambas as
 	fases presente no escoamento, a distribui\c c\~ao de bolhas \'e uniforme
 	ao longo do tubo, enquanto que para velocidades mais elevadas o
-	padr\~ao de escoamento se assemelha ao pouco anular.
+	padr\~ao de escoamento se assemelha ao pouco anular;
 	\item Bolhas: escoamento similar ao do tipo golfadas em
 	tubos verticais. Como no caso de bolhas dispersas, a bolhas de g\'as
 	ou vapor tendem a atravessar o tubo na metade superior, devido ao
-	campo gravitacional.
+	campo gravitacional;
 	\item Estratificado: escoamento separado por
 	uma interface suave, onde geralmente \'e encontrado em baixas
-	velocidades das fases l\'iquida e gasosa.
+	velocidades das fases l\'iquida e gasosa;
 	\item Estratificado ondulado: as ondas s\~ao formadas
 	quando a velocidade na fase gasosa \'e aumentada. Estas ondas se
-	movimentam na direc\~ao do escoamento.  
+	movimentam na direc\~ao do escoamento;
 	\item Golfada: com o aumento da velocidade da fase
 	de vapor, a amplitude das ondas tamb\'em aumenta, se aproximando da
 	parede do tubo. A parte superior do tubo atr\'as da onda \'e molhada
 	por um filme l\'iquido que \'e drenado para o meio da fase
-	l\'iquido.
+	l\'iquido;
 	\item Anular: a vaz\~ao da fase gasosa \'e t\~ao
 	alta que \'e capaz de sustentar a fase l\'iquida pr\'oxima \`a
 	parede do tubo, originando um n\'ucleo de g\'as ou vapor. Em sua
 	se\c c\~ao transversal, o l\'iquido pode n\~ao ser cont\'inuo ao redor
 	de toda a circunfer\^encia, por\'em ser\'a mais espesso na base do
 	tubo.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Mapa de padr\~oes de escoamentos}
 Os mapas de padr\~oes de escoamento s\~ao utilizados para a
@@ -998,10 +1005,11 @@ m\'assicas superficiais de l\'iquido $G_L$ e de g\'as $G_G$.
 \begin{figure}[ht!]
 	\subfloat[]
 	{\includegraphics[scale=0.27,angle=-0.5]{hewitt1969.eps}}
-	\hspace{0.2cm}
-	\subfloat[]
+	\\ (a) \\
 	{\includegraphics[scale=0.27,angle=1]{baker1954.eps}}
-	\caption[Mapas de padr\~oes de escoamento bif\'asico.]{Mapas de
+	\\ (b) \\
+	\caption[Mapas de padr\~oes de escoamento bif\'asico.]
+	{Mapas de
 	padr\~oes de escoamento bif\'asico representado por fluxo de massa
 	$G$ de l\'iquido $G_L$ e de g\'as $G_G$. As linhas cont\'inuas e
 	tracejadas representam a transi\c c\~ao dos padr\~oes de escoamento.

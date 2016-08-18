@@ -25,4 +25,5 @@ clean:
 	@find . -name "*.aux" -exec rm -fv {} \;
 
 deepclean: clean
-	@rm -vf main.dvi main.ps
+	@rm -vf main.dvi main.ps main.pdf
+
